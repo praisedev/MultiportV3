@@ -216,7 +216,7 @@ echo -e "\e[33m╘════════════════════�
 [\033[1;33m19\033[0m]  Reboot"
 
 if [[ $serverV > $myver ]]; then
-	echo -e "[\033[1;33m19\033[0m]  Update Autoscript To V$serverV\n"
+	echo -e "[\033[1;33m20\033[0m]  Update Autoscript To V$serverV\n"
 	up2u="updatews"
 else
 	up2u="menu"
