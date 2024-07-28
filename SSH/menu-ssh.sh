@@ -2,7 +2,7 @@
 
 clear
 echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
-echo -e " \E[0;41;36m             SSH WEBSOCKET MENU             \E[0m"
+echo -e " \E[1;48;39m             SSH WEBSOCKET MENU             \E[0m"
 echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m
 [\033[1;33m•1\033[0m]  Create SSH Account
 [\033[1;33m•2\033[0m]  Trial SSH Account
