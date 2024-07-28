@@ -156,11 +156,9 @@ tyest="$(vnstat -i eth0 | grep "yesterday" | awk '{print $8" "substr ($9, 1, 1)}
 dmon="$(vnstat -i eth0 -m | grep "$(date +"%b '%y")" | awk '{print $3" "substr ($4, 1, 1)}')"
 umon="$(vnstat -i eth0 -m | grep "$(date +"%b '%y")" | awk '{print $6" "substr ($7, 1, 1)}')"
 tmon="$(vnstat -i eth0 -m | grep "$(date +"%b '%y")" | awk '{print $9" "substr ($10, 1, 1)}')"
-echo -e "\e[36m
-\033[0m"
-echo -e " \E[0;41;36m                INFO SERVER                 \E[0m"
-echo -e "\e[36m
-\033[0m"
+echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
+echo -e " \E[0;41;39m                 INFO SERVER                \E[0m"
+echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m"
 tram=$(free -h | awk 'NR==2 {print $2}')
 uram=$(free -h | awk 'NR==2 {print $3}')
 uphours=$(uptime -p | awk '{print $2,$3}' | cut -d , -f1)
@@ -177,73 +175,47 @@ echo -e " Memory Usage    :  $uram / $tram"
 echo -e " VPN Core        :  XRAY-CORE"
 echo -e " Domain          :  $domain"
 echo -e " IP VPS          :  $IPVPS"
-echo -e "\e[36m
-\033[0m"
+echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
 echo -e "     [ XRAY-CORE${NC} : ${status_xray} ]   [ NGINX${NC} : ${status_nginx} ]"
-echo -e "\e[36m
-\033[0m"
-echo -e "  \033[1;37mSSH XRAY WEBSOCKET MULTIPORT BY KhaiVpn767\033[0m"
-echo -e "\e[36m
-\033[0m"
+echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m"
+echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
+echo -e "  \033[1;33mSSH XRAY WEBSOCKET MULTIPORT BY KhaiVpn767\033[0m"
+echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m"
 echo -e "\e[33m Traffic\e[0m     ${P}Today     Yesterday     Month     ${N}"
 echo -e "\e[33m Download\e[0m   $dtoday    $dyest     $dmon       "
 echo -e "\e[33m Upload\e[0m     $utoday    $uyest     $umon       "
 echo -e "\e[33m Total\e[0m      ${B}$ttoday    $tyest     $tmon       ${N}"
 echo -e "\e[36m
 \033[0m"
-echo -e "\e[36m
-\033[0m"
-echo -e " \E[0;41;36m              AUTOSCRIPT MENU               \E[0m"
-echo -e "\e[36m
-\033[0m
- [\033[1;36m
-1 \033[0m]  XRAY Vmess Websocket Panel
- [\033[1;36m
-2 \033[0m]  XRAY Vless Websocket Panel
- [\033[1;36m
-3 \033[0m]  XRAY Trojan Websocket Panel
- [\033[1;36m
-4 \033[0m]  SSH Websocket Panel"
-echo -e "\e[36m
-\033[0m"
-echo -e " \E[0;41;36m                OTHERS MENU                 \E[0m"
-echo -e "\e[36m
-\033[0m
- [\033[1;36m
-5 \033[0m]  Install TCP BBR
- [\033[1;36m
-6 \033[0m]  Limit Bandwith Speed"
-echo -e "\e[36m
-\033[0m"
-echo -e " \E[0;41;36m                SYSTEM MENU                 \E[0m"
-echo -e "\e[36m
-\033[0m
- [\033[1;36m
-7 \033[0m]  Change Domain
- [\033[1;36m
-8 \033[0m]  Renew Certificate XRAY
- [\033[1;36m
-9 \033[0m]  Check VPN Status
- [\033[1;36m
-10 \033[0m]  Check VPN Port
- [\033[1;36m
-11\033[0m]  Restart VPN Services
- [\033[1;36m
-12\033[0m]  Speedtest VPS
- [\033[1;36m
-13\033[0m]  Check RAM
- [\033[1;36m
-14\033[0m]  Check Bandwith
- [\033[1;36m
-15\033[0m]  DNS Changer
- [\033[1;36m
-16\033[0m]  Netflix Checker
- [\033[1;36m
-17\033[0m]  Backup
- [\033[1;36m
-18\033[0m]  Restore
- [\033[1;36m
-19\033[0m]  Reboot"
+echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
+echo -e " \E[0;41;39m                 XRAY MENU                  \E[0m"
+echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m
+[\033[1;33m•1\033[0m]  XRAY Vmess Websocket Panel
+[\033[1;33m•2\033[0m]  XRAY Vless Websocket Panel
+[\033[1;33m•3\033[0m]  XRAY Trojan Websocket Panel
+[\033[1;33m•4\033[0m]  SSH Websocket Panel"
+echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
+echo -e " \E[0;41;39m                OTHERS MENU                 \E[0m"
+echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m
+[\033[1;33m•5\033[0m]  Install TCP BBR
+[\033[1;33m•6\033[0m]  Limit Bandwith Speed"
+echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
+echo -e " \E[0;41;39m                SYSTEM MENU                 \E[0m"
+echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m
+""
+[\033[1;33m•7\033[0m]  Change Domain
+[\033[1;33m•8\033[0m]  Renew Certificate XRAY
+[\033[1;33m•9\033[0m]  Check VPN Status
+[\033[1;33m10\033[0m]  Check VPN Port
+[\033[1;33m11\033[0m]  Restart VPN Services
+[\033[1;33m12\033[0m]  Speedtest VPS
+[\033[1;33m13\033[0m]  Check RAM
+[\033[1;33m14\033[0m]  Check Bandwith
+[\033[1;33m15\033[0m]  DNS Changer
+[\033[1;33m16\033[0m]  Netflix Checker
+[\033[1;33m17\033[0m]  Backup
+[\033[1;33m18\033[0m]  Restore
+[\033[1;33m19\033[0m]  Reboot"
 
 if [[ $serverV > $myver ]]; then
 	echo -e " [\033[1;36m
