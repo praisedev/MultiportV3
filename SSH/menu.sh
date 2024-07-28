@@ -157,7 +157,7 @@ dmon="$(vnstat -i eth0 -m | grep "$(date +"%b '%y")" | awk '{print $3" "substr (
 umon="$(vnstat -i eth0 -m | grep "$(date +"%b '%y")" | awk '{print $6" "substr ($7, 1, 1)}')"
 tmon="$(vnstat -i eth0 -m | grep "$(date +"%b '%y")" | awk '{print $9" "substr ($10, 1, 1)}')"
 echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
-echo -e " \E[0;32;39m                 INFO SERVER                \E[0m"
+echo -e " \E[1;48;39m                 INFO SERVER                \E[0m"
 echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m"
 tram=$(free -h | awk 'NR==2 {print $2}')
 uram=$(free -h | awk 'NR==2 {print $3}')
@@ -186,19 +186,19 @@ echo -e "\e[33m Download\e[0m   $dtoday    $dyest     $dmon       "
 echo -e "\e[33m Upload\e[0m     $utoday    $uyest     $umon       "
 echo -e "\e[33m Total\e[0m      ${B}$ttoday    $tyest     $tmon       ${N}"
 echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
-echo -e " \E[0;32;39m                 XRAY MENU                  \E[0m"
+echo -e " \E[1;48;39m                 XRAY MENU                  \E[0m"
 echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m
 [\033[1;33m•1\033[0m]  XRAY Vmess Websocket Panel
 [\033[1;33m•2\033[0m]  XRAY Vless Websocket Panel
 [\033[1;33m•3\033[0m]  XRAY Trojan Websocket Panel
 [\033[1;33m•4\033[0m]  SSH Websocket Panel"
 echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
-echo -e " \E[0;32;39m                OTHERS MENU                 \E[0m"
+echo -e " \E[1;48;39m                OTHERS MENU                 \E[0m"
 echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m
 [\033[1;33m•5\033[0m]  Install TCP BBR
 [\033[1;33m•6\033[0m]  Limit Bandwith Speed"
 echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
-echo -e " \E[0;32;39m                SYSTEM MENU                 \E[0m"
+echo -e " \E[1;48;39m                SYSTEM MENU                 \E[0m"
 echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m
 ""
 [\033[1;33m•7\033[0m]  Change Domain
@@ -216,7 +216,7 @@ echo -e "\e[33m╘════════════════════�
 [\033[1;33m19\033[0m]  Reboot"
 
 if [[ $serverV > $myver ]]; then
-	echo -e "[\033[1;33m20\033[0m]  Update Autoscript To V$serverV\n"
+	echo -e "[\033[1;33m19\033[0m]  Update Autoscript To V$serverV\n"
 	up2u="updatews"
 else
 	up2u="menu"
