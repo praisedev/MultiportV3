@@ -1,31 +1,19 @@
 #!/bin/bash
 
 clear
-echo -e "\e[36m
-\033[0m"
+echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
 echo -e " \E[0;41;36m             SSH WEBSOCKET MENU             \E[0m"
-echo -e "\e[36m
-\033[0m
- [\033[1;36m
-1 \033[0m]  Create SSH Account
- [\033[1;36m
-2 \033[0m]  Trial SSH Account
- [\033[1;36m
-3 \033[0m]  Renew SSH Account
- [\033[1;36m
-4 \033[0m]  Delete SSH Account
- [\033[1;36m
-5 \033[0m]  Check User Login SSH Account
- [\033[1;36m
-6 \033[0m]  List Member SSH Account
- [\033[1;36m
-7 \033[0m]  Delete User Expired SSH Account
- [\033[1;36m
-8 \033[0m]  Set up Autokill SSH
- [\033[1;36m
-9 \033[0m]  Check Users Who Do Multi Login SSH
- [\033[1;36m
-10\033[0m]  Back To Main Menu"
+echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m
+[\033[1;33m•1\033[0m]  Create SSH Account
+[\033[1;33m•2\033[0m]  Trial SSH Account
+[\033[1;33m•3\033[0m]  Renew SSH Account
+[\033[1;33m•4\033[0m]  Delete SSH Account
+[\033[1;33m•5\033[0m]  Check User Login SSH Account
+[\033[1;33m•6\033[0m]  List Member SSH Account
+[\033[1;33m•7\033[0m]  Delete User Expired SSH Account
+[\033[1;33m•8\033[0m]  Set up Autokill SSH
+[\033[1;33m•9\033[0m]  Check Users Who Do Multi Login SSH
+[\033[1;33m•0\033[0m]  Back To Main Menu"
 echo ""
 echo -e " \033[1;37mPress [ Ctrl+C ]
  To-Exit-Script\033[0m"
@@ -69,7 +57,7 @@ if [[ $(cat /opt/.ver) = $serverV ]] >/dev/null 2>&1; then
 		ceklim
 		read -n1 -r -p "Press any key to continue..."
 		menu
-	elif [[ $x -eq 10 ]]; then
+	elif [[ $x -eq 0 ]]; then
 		clear
 		menu
 	else
