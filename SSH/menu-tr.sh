@@ -6,7 +6,7 @@ B='\033[0;36m'
 N='\e[0m'
 clear
 echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
-echo -e " \E[0;41;36m            XRAY TROJAN WS MENU             \E[0m"
+echo -e " \E[1;48;39m            XRAY TROJAN WS MENU             \E[0m"
 echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m
 [\033[1;33m•1\033[0m]  Add XRAY Trojan WS Account
 [\033[1;33m•2\033[0m]  Check User Login XRAY Trojan WS
