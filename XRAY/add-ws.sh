@@ -138,7 +138,7 @@ sed -i '/#none$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /usr/local/etc/xray/none.json
 
 cat >/usr/local/etc/xray/$user-tls.json <<EOF
-      {
+{
       "v": "2",
       "ps": "XRAY_VMESS_TLS_${user}",
       "add": "${sts}${domain}",
@@ -151,10 +151,11 @@ cat >/usr/local/etc/xray/$user-tls.json <<EOF
       "host": "${domain}",
       "tls": "tls",
       "sni": "${sni}"
+}
 EOF
 
 cat >/usr/local/etc/xray/$user-maxis.json <<EOF
-      {
+{
       "v": "2",
       "ps": "XRAY_VMESS_MAXIS_${user}",
       "add": "104.22.39.195",
@@ -167,10 +168,11 @@ cat >/usr/local/etc/xray/$user-maxis.json <<EOF
       "host": "${domain}",
       "tls": "tls",
       "sni": "ufuture.uitm.edu.my"
+}
 EOF
 
 cat >/usr/local/etc/xray/$user-celcom.json <<EOF
-      {
+{
       "v": "2",
       "ps": "XRAY_VMESS_CELCOM_${user}",
       "add": "104.20.65.29",
@@ -183,10 +185,11 @@ cat >/usr/local/etc/xray/$user-celcom.json <<EOF
       "host": "${domain}",
       "tls": "tls",
       "sni": "onlinepayment.celcom.com.my"
+}
 EOF
 
 cat >/usr/local/etc/xray/$user-none.json <<EOF
-      {
+{
       "v": "2",
       "ps": "XRAY_VMESS_NON_TLS_${user}",
       "add": "${sts}${domain}",
@@ -198,10 +201,11 @@ cat >/usr/local/etc/xray/$user-none.json <<EOF
       "type": "none",
       "host": "${domain}",
       "tls": "none"
+}
 EOF
 
 cat >/usr/local/etc/xray/$user-digi.json <<EOF
-      {
+{
       "v": "2",
       "ps": "XRAY_VMESS_DIGI_${user}",
       "add": "162.159.134.61",
@@ -213,10 +217,11 @@ cat >/usr/local/etc/xray/$user-digi.json <<EOF
       "type": "none",
       "host": "${domain}",
       "tls": "none"
+}
 EOF
 
 cat >/usr/local/etc/xray/$user-yes.json <<EOF
-      {
+{
       "v": "2",
       "ps": "XRAY_VMESS_YES_${user}",
       "add": "104.17.112.188",
@@ -228,6 +233,7 @@ cat >/usr/local/etc/xray/$user-yes.json <<EOF
       "type": "none",
       "host": "${domain}",
       "tls": "none"
+}
 EOF
 
 vmess_base641=$(base64 -w 0 <<<$vmess_json1)
