@@ -127,15 +127,17 @@ mkdir -p /usr/local/etc/xray
 
 # Download XRAY Core Latest Link
 latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
-# Installation Xray Core 2023
-mv /usr/local/bin/xray /usr/local/bin/xray.bak && wget -q -O /usr/local/bin/xray "https://raw.githubusercontent.com/vinstechmy/xray-core/main/XRAY/xray" && chmod 755 /usr/local/bin/xray
+
+# Installation Xray Core
+xraycore_link="https://github.com/XTLS/Xray-core/releases/download/v$latest_version/xray-linux-64.zip"
 
 # Unzip Xray Linux 64
 cd $(mktemp -d)
 curl -sL "$xraycore_link" -o xray.zip
 unzip -q xray.zip && rm -rf xray.zip
-mv xray /usr/local/bin/xray
+mv xray /usr/local/bin/
 chmod +x /usr/local/bin/xray
+
 # generate certificates
 systemctl stop nginx
 mkdir /root/.acme.sh
@@ -149,10 +151,13 @@ sleep 1
 
 # Nginx directory file download
 mkdir -p /home/vps/public_html
+
 # set uuid
 uuid=$(cat /proc/sys/kernel/random/uuid)
+
 # // INSTALLING VMESS WS TLS
 cat >/usr/local/etc/xray/config.json <<END
+{
   "log": {
     "access": "/var/log/xray/access.log",
     "error": "/var/log/xray/error.log",
@@ -275,10 +280,13 @@ cat >/usr/local/etc/xray/config.json <<END
       "statsInboundDownlink": true,
       "statsOutboundUplink" : true,
       "statsOutboundDownlink" : true
-    }
+      }
+   }
+}
 END
 # // INSTALLING VMESS WS NTLS
 cat >/usr/local/etc/xray/none.json <<END
+{
   "log": {
     "access": "/var/log/xray/access.log",
     "error": "/var/log/xray/error.log",
@@ -401,11 +409,14 @@ cat >/usr/local/etc/xray/none.json <<END
       "statsInboundDownlink": true,
       "statsOutboundUplink" : true,
       "statsOutboundDownlink" : true
-    }
+      }
+   }
+}
 END
 
 # // INSTALLING VLESS WS TLS
 cat >/usr/local/etc/xray/vless.json <<END
+{
   "log": {
     "access": "/var/log/xray/access2.log",
     "error": "/var/log/xray/error.log",
@@ -529,10 +540,13 @@ cat >/usr/local/etc/xray/vless.json <<END
       "statsInboundDownlink": true,
       "statsOutboundUplink" : true,
       "statsOutboundDownlink" : true
-    }
+      }
+   }
+}
 END
 # // INSTALLING VLESS WS NTLS
 cat >/usr/local/etc/xray/vnone.json <<END
+{
   "log": {
     "access": "/var/log/xray/access2.log",
     "error": "/var/log/xray/error.log",
@@ -656,12 +670,15 @@ cat >/usr/local/etc/xray/vnone.json <<END
       "statsInboundDownlink": true,
       "statsOutboundUplink" : true,
       "statsOutboundDownlink" : true
-    }
+      }
+   }
+}
 END
 
 # // INSTALLING TROJAN WS TLS
 cat >/usr/local/etc/xray/trojanws.json <<END
-"log": {
+{
+   "log": {
         "access": "/var/log/xray/access3.log",
         "error": "/var/log/xray/error.log",
         "loglevel": "info"
@@ -686,6 +703,7 @@ cat >/usr/local/etc/xray/trojanws.json <<END
             "password": "${uuid}",
             "level": 0,
             "email": ""
+#tr
           }
         ],
         "decryption": "none"
@@ -770,12 +788,15 @@ cat >/usr/local/etc/xray/trojanws.json <<END
       "statsInboundDownlink": true,
       "statsOutboundUplink" : true,
       "statsOutboundDownlink" : true
-    }
+      }
+   }
+}
 END
 
 # // INSTALLING TROJAN WS NONE TLS
 cat >/usr/local/etc/xray/trnone.json <<END
-"log": {
+{
+  "log": {
         "access": "/var/log/xray/access3.log",
         "error": "/var/log/xray/error.log",
         "loglevel": "info"
@@ -885,7 +906,9 @@ cat >/usr/local/etc/xray/trnone.json <<END
       "statsInboundDownlink": true,
       "statsOutboundUplink" : true,
       "statsOutboundDownlink" : true
-    }
+      }
+   }
+}
 END
 
 rm -rf /etc/systemd/system/xray.service.d
@@ -931,6 +954,7 @@ WantedBy=multi-user.target
 END
 
 #nginx config
+rm -rf /etc/nginx/conf.d/xray.conf
 cat >/etc/nginx/conf.d/xray.conf <<EOF
     server {
              listen 80;
@@ -1068,36 +1092,30 @@ echo -e "[ ${green}OK${NC} ] Enable & restart xray "
 echo -e "[ ${green}OK${NC} ] Restarting Vmess WS"
 systemctl daemon-reload
 systemctl enable xray.service
-systemctl start xray.service
 systemctl restart xray.service
 systemctl enable xray@none.service
-systemctl start xray@none.service
 systemctl restart xray@none.service
 
 # enable xray vless ws tls
 echo -e "[ ${green}OK${NC} ] Restarting Vless WS"
 systemctl daemon-reload
 systemctl enable xray@vless.service
-systemctl start xray@vless.service
 systemctl restart xray@vless.service
 systemctl enable xray@vnone.service
-systemctl start xray@vnone.service
 systemctl restart xray@vnone.service
 
 # enable xray trojan ws tls
 echo -e "[ ${green}OK${NC} ] Restarting Trojan WS"
 systemctl daemon-reload
 systemctl enable xray@trojanws.service
-systemctl start xray@trojanws.service
 systemctl restart xray@trojanws.service
 systemctl enable xray@trnone.service
-systemctl start xray@trnone.service
 systemctl restart xray@trnone.service
 
 # enable service multiport
 echo -e "[ ${green}OK${NC} ] Restarting Multiport Service"
+systemctl daemon-reload
 systemctl enable nginx
-systemctl start nginx
 systemctl restart nginx
 sleep 1
 cd /usr/bin
@@ -1144,4 +1162,5 @@ wget -O menu-vless "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/mai
 wget -O menu-tr "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/menu-tr.sh" && chmod +x menu-tr
 wget -O menu-ssh "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/menu-ssh.sh" && chmod +x menu-ssh
 mv /root/domain /usr/local/etc/xray/
-rm -f ins-xray.sh
+rm -rf ins-xray.sh
+
