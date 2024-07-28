@@ -231,7 +231,7 @@ echo -e " Client Name   : $User"
 echo -e " Expiry Script : $Exp"
 echo -e " Status Script : ${G}$Name${NC}"
 echo -e " License Key   : ${P}$MYIP${NC}"
-echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m
+echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m"
 echo ""
 echo -ne " Select menu : "
 
