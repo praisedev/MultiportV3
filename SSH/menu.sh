@@ -185,8 +185,6 @@ echo -e "\e[33m Traffic\e[0m     ${P}Today     Yesterday     Month     ${N}"
 echo -e "\e[33m Download\e[0m   $dtoday    $dyest     $dmon       "
 echo -e "\e[33m Upload\e[0m     $utoday    $uyest     $umon       "
 echo -e "\e[33m Total\e[0m      ${B}$ttoday    $tyest     $tmon       ${N}"
-echo -e "\e[36m
-\033[0m"
 echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
 echo -e " \E[0;41;39m                 XRAY MENU                  \E[0m"
 echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m
@@ -218,8 +216,7 @@ echo -e "\e[33m╘════════════════════�
 [\033[1;33m19\033[0m]  Reboot"
 
 if [[ $serverV > $myver ]]; then
-	echo -e " [\033[1;36m
-20\033[0m]  Update Autoscript To V$serverV\n"
+	echo -e "[\033[1;33m19\033[0m]  Update Autoscript To V$serverV\n"
 	up2u="updatews"
 else
 	up2u="menu"
@@ -228,15 +225,13 @@ fi
 echo -e " \033[1;37mPress [ Ctrl+C ]
  To-Exit-Script\033[0m"
 echo ""
-echo -e "\e[36m
-\033[0m"
-echo -e " Version       :\033[1;36m SSH XRAY WS Multiport $myver\e[0m"
+echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
+echo -e " Version       :\033[1;36m SSH XRAY WS Multiport : v3\e[0m"
 echo -e " Client Name   : $User"
 echo -e " Expiry Script : $Exp"
 echo -e " Status Script : ${G}$Name${NC}"
 echo -e " License Key   : ${P}$MYIP${NC}"
-echo -e "\e[36m
-\033[0m"
+echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m
 echo ""
 echo -ne " Select menu : "
 
