@@ -1,11 +1,9 @@
 #!/bin/bash
 clear
 hariini=$(date +%d-%m-%Y)
-echo -e "\033[0;34m
-\033[0m"
-echo -e "\\E[0;41;36m    Auto Delete SSH WS Account    \E[0m"
-echo -e "\033[0;34m
-\033[0m"
+echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
+echo -e " \E[1;47;39m    Auto Delete SSH WS AccountSERVER                \E[0m"
+echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m"
 echo ""
 echo "Successfully Remove Expired Account"
 echo ""
