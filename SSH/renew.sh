@@ -1,11 +1,9 @@
 #!/bin/bash
 
 clear
-echo -e "\033[0;34m
-\033[0m"
-echo -e "\\E[0;41;36m       Renew SSH WS Account       \E[0m"
-echo -e "\033[0;34m
-\033[0m"
+echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
+echo -e " \E[1;47;39m       Renew SSH WS Account                 \E[0m"
+echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m
 echo
 read -p " Username      : " User
 egrep "^$User" /etc/passwd >/dev/null
@@ -23,11 +21,9 @@ usermod -e $Expiration $User
 egrep "^$User" /etc/passwd >/dev/null
 echo -e "$Pass\n$Pass\n" | passwd $User &>/dev/null
 clear
-echo -e "\033[0;34m
-\033[0m"
-echo -e "\\E[0;41;36m       Renew SSH WS Account       \E[0m"
-echo -e "\033[0;34m
-\033[0m"
+echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
+echo -e "\\E[0;41;36m       Renew SSH WS Account                 \E[0m"
+echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m
 echo -e ""
 echo -e " Username      : $User"
 echo -e " Days Extend   : $Days Days"
@@ -40,11 +36,9 @@ echo -e "Autoscript By KhaiVpn767"
 echo -e ""
 else
 clear
-echo -e "\033[0;34m
-\033[0m"
-echo -e "\\E[0;41;36m       Renew SSH WS Account       \E[0m"
-echo -e "\033[0;34m
-\033[0m"
+echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
+echo -e "\\E[0;41;36m       Renew SSH WS Account                 \E[0m"
+echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m
 echo -e ""
 echo -e "       Username Doesnt Exist       "
 echo -e ""
