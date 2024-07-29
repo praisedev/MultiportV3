@@ -187,10 +187,10 @@ else
 \033[0m" | tee -a /etc/log-create-user.log
 	#echo -e "OpenVPN Config : http://$IP:81/" | tee -a /etc/log-create-user.log
 	echo -e "\033[0;34m
-\033[0m" | tee -a /etc/log-create-user.log"
-\033[0m" | tee -a /etc/log-create-user.log"
+\033[0m" | tee -a /etc/log-create-user.log
+\033[0m" | tee -a /etc/log-create-user.log
 	echo -e "
-	echo -e "\e[33m══════════════════════\e[m"
+	echo -e "\e[33m══════════════════════\e[m
 GET / HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]
 GET wss://bug.com HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]
 GET ws://bug.com HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]
@@ -199,6 +199,6 @@ GET ws://bug.com HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]
 	echo -e "\033[0;34m
 \033[0m" | tee -a /etc/log-create-user.log
 	echo -e ""
-	echo -e "Autoscript By KhaiVpn767
+	echo -e "Autoscript By KhaiVpn767"
 	echo "" | tee -a /etc/log-create-user.log
 fi
