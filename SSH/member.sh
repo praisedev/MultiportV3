@@ -4,14 +4,11 @@ red=$(tput setaf 1)
 green=$(tput setaf 2)
 NC=$(tput sgr0)
 clear
-echo -e "\033[0;34m
-\033[0m"
-echo -e "\\E[0;41;36m           List SSH WS Account           \E[0m"
-echo -e "\033[0;34m
-\033[0m"
+echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
+echo -e " \E[1;47;39m           List SSH WS Account                \E[0m"
+echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m"
 echo "Username         Exp Date         Status"
-echo -e "\033[0;34m
-\033[0m"
+echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
 
 while read expired; do
 	AKUN="$(echo $expired | cut -d: -f1)"
