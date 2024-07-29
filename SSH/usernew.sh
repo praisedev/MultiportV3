@@ -158,12 +158,20 @@ GET ws://bug.com HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]
 	echo -e "Autoscript By KhaiVpn767"
 	echo -e ""
 else
-	echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m" | tee -a /etc/log-create-user.log
+	echo -e "\e[33m╒═══════════════════════════════════════╕\033[0m" | tee -a /etc/log-create-user.log
 	echo -e " \E[1;47;30m            SSH Account                \E[0m"
-	echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m" | tee -a /etc/log-create-user.log
+	echo -e "\e[33m╘═══════════════════════════════════════╛\033[0m" | tee -a /etc/log-create-user.log
+	echo -e "\e[33m══════════════════════\e[m" | tee -a /etc/log-create-user.log
 	echo -e "Username       : $Login" | tee -a /etc/log-create-user.log
 	echo -e "Password       : $Pass" | tee -a /etc/log-create-user.log
-	echo -e "Expired On     : $exp"
+	echo -e "Created        : $harini" | tee -a /etc/log-create-user.log
+	echo -e "Expired On     : $exp" | tee -a /etc/log-create-user.log
+	echo -e "\e[33m══════════════════════\e[m" | tee -a /etc/log-create-user.log
+	echo -e "Host           : $domen" | tee -a /etc/log-create-user.log
+	echo -e "Name Server(NS): $nsdomain1" | tee -a /etc/log-create-user.log
+	echo -e "\e[33m══════════════════════\e[m" | tee -a /etc/log-create-user.log
+    echo -e "Pubkey         : $pubkey1" | tee -a /etc/log-create-user.log
+	echo -e "\e[33m══════════════════════\e[m" | tee -a /etc/log-create-user.log
 	echo -e "\033[0;34m
 \033[0m"
 	echo -e "IP             : $IP" | tee -a /etc/log-create-user.log
@@ -182,9 +190,11 @@ else
 \033[0m" | tee -a /etc/log-create-user.log"
 \033[0m" | tee -a /etc/log-create-user.log
 	echo -e "
-GET / HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]
-GET wss://bug.com HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]
-GET ws://bug.com HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]
+	echo -e "\e[$line══════════════════════\e[m"
+GET / HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]"
+GET wss://bug.com HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]"
+GET ws://bug.com HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]"
+echo -e "\e[$line══════════════════════\e[m"
 " | tee -a /etc/log-create-user.log
 	echo -e "\033[0;34m
 \033[0m" | tee -a /etc/log-create-user.log
