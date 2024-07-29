@@ -198,7 +198,7 @@ echo -e "\e[33m╘════════════════════�
 [\033[1;33m•5\033[0m]  Install TCP BBR
 [\033[1;33m•6\033[0m]  Limit Bandwith Speed"
 echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
-echo -e " \E[1;48;39m                SYSTEM MENU                 \E[0m"
+echo -e " \E[1;47;39m                SYSTEM MENU                 \E[0m"
 echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m
 ""
 [\033[1;33m•7\033[0m]  Change Domain
