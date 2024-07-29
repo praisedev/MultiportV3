@@ -7,11 +7,9 @@ G='\033[0;32m'
 NC='\e[0m'
 N='\e[0m'
 clear
-echo -e "\e[36m
-\033[0m"
-echo -e " \E[0;41;36m                 DNS CHANGER                \E[0m"
-echo -e "\e[36m
-\033[0m
+echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
+echo -e " \E[1;47;39m                 DNS CHANGER                \E[0m"
+echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m"
 \033[1;37mDNS Changer By KhaiVpn767\033[0m
 \033[1;37mTelegram : https://t.me/KhaiVpn767 / @KhaiVpn767\033[0m"
 dnsfile="/root/dns"
