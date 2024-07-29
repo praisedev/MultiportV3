@@ -3,7 +3,7 @@
 clear
 echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
 echo -e " \E[1;47;39m       Renew SSH WS Account                 \E[0m"
-echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m
+echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m"
 echo
 read -p " Username      : " User
 egrep "^$User" /etc/passwd >/dev/null
@@ -22,8 +22,8 @@ egrep "^$User" /etc/passwd >/dev/null
 echo -e "$Pass\n$Pass\n" | passwd $User &>/dev/null
 clear
 echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
-echo -e "\\E[0;41;36m       Renew SSH WS Account                 \E[0m"
-echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m
+echo -e " \E[1;47;39m       Renew SSH WS Account                 \E[0m"
+echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m"
 echo -e ""
 echo -e " Username      : $User"
 echo -e " Days Extend   : $Days Days"
@@ -37,7 +37,7 @@ echo -e ""
 else
 clear
 echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
-echo -e "\\E[0;41;36m       Renew SSH WS Account                 \E[0m"
+echo -e " \E[1;47;39m       Renew SSH WS Account                 \E[0m"
 echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m
 echo -e ""
 echo -e "       Username Doesnt Exist       "
