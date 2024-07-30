@@ -115,6 +115,8 @@ ovpn2="$(netstat -nlpu | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | 
 OhpSSH=$(cat /root/log-install.txt | grep -w "OHP SSH" | cut -d: -f2 | awk '{print $1}')
 OhpDB=$(cat /root/log-install.txt | grep -w "OHP DBear" | cut -d: -f2 | awk '{print $1}')
 OhpOVPN=$(cat /root/log-install.txt | grep -w "OHP OpenVPN" | cut -d: -f2 | awk '{print $1}')
+nsdomain1=$(cat /root/nsdomain)
+pubkey1=$(cat /etc/slowdns/server.pub)
 sleep 1
 clear
 useradd -e $(date -d "$masaaktif days" +"%Y-%m-%d") -s /bin/false -M $Login
@@ -132,6 +134,7 @@ if [[ ! -z "${PID}" ]]; then
 	echo -e "Expired On     : $exp" | tee -a /etc/log-create-user.log
 	echo -e "\033[0;34m
 \033[0m" | tee -a /etc/log-create-user.log
+        echo -e "Pubkey         : $pubkey1"
 	echo -e "IP             : $IP" | tee -a /etc/log-create-user.log
 	echo -e "Host           : $domen" | tee -a /etc/log-create-user.log
 	echo -e "OpenSSH        : $opensh" | tee -a /etc/log-create-user.log
