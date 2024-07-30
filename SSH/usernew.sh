@@ -96,11 +96,9 @@ fi
 
 portsshws=$(cat ~/log-install.txt | grep -w "SSH Websocket" | cut -d: -f2 | awk '{print $1}')
 wsssl=$(cat /root/log-install.txt | grep -w "SSH SSL Websocket" | cut -d: -f2 | awk '{print $1}')
-echo -e "\033[0;34m
-\033[0m"
-echo -e "\E[0;41;36m            SSH Account            \E[0m"
-echo -e "\033[0;34m
-\033[0m"
+echo -e "\e[33m═══════════════════════════════════════════════════════\e[m"
+echo -e " \E[1;47;30m                 SSH Account                  \E[0m"
+echo -e "\e[33m═══════════════════════════════════════════════════════\e[m"
 read -p " Username : " Login
 read -p " Password : " Pass
 read -p " Expired  : " masaaktif
@@ -126,7 +124,7 @@ PID=$(ps -ef | grep -v grep | grep sshws | awk '{print $2}')
 if [[ ! -z "${PID}" ]]; then
 echo -e ""
 echo -e "\e[33m═══════════════════════════════════════════════════════\e[m"
-echo -e " \E[1;47;30m         \e[30m[\e[$box Informasi Account SSH & OpenVPN\e[30m ]\e[1m           \e[m"
+echo -e " \E[1;47;30m                 Informasi Account SSH & OpenVPN                  \E[0m"
 echo -e "\e[33m═══════════════════════════════════════════════════════\e[m"
 echo -e "\e[33m══════════════════════\e[m"
 echo -e "Username         : $Login" | tee -a /etc/log-create-user.log
@@ -169,7 +167,7 @@ else
 	echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 echo -e ""
 echo -e "\e[33m═══════════════════════════════════════════════════════\e[m"
-echo -e " \E[1;47;30m         \e[30m[\e[$box Informasi Account SSH & OpenVPN\e[30m ]\e[1m           \e[m"
+echo -e " \E[1;47;30m         \e[30m[\e[$box Informasi Account SSH & OpenVPN                  \E[0m"
 echo -e "\e[33m═══════════════════════════════════════════════════════\e[m"
 echo -e "\e[33m══════════════════════\e[m"
 echo -e "Username         : $Login" | tee -a /etc/log-create-user.log
