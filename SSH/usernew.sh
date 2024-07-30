@@ -134,7 +134,7 @@ if [[ ! -z "${PID}" ]]; then
 	echo -e "Expired On     : $exp" | tee -a /etc/log-create-user.log
 	echo -e "\033[0;34m
 \033[0m" | tee -a /etc/log-create-user.log
-        echo -e "Pubkey         : $pubkey1"
+        echo -e "Pubkey         : $pubkey1" | tee -a /etc/log-create-user.log
 	echo -e "IP             : $IP" | tee -a /etc/log-create-user.log
 	echo -e "Host           : $domen" | tee -a /etc/log-create-user.log
 	echo -e "OpenSSH        : $opensh" | tee -a /etc/log-create-user.log
@@ -170,6 +170,7 @@ else
 	echo -e "Password       : $Pass" | tee -a /etc/log-create-user.log
 	echo -e "\033[0;34m
 \033[0m"
+        echo -e "Pubkey         : $pubkey1" | tee -a /etc/log-create-user.log
 	echo -e "IP             : $IP" | tee -a /etc/log-create-user.log
 	echo -e "Host           : $domen" | tee -a /etc/log-create-user.log
 	echo -e "OpenSSH        : $opensh" | tee -a /etc/log-create-user.log
