@@ -132,7 +132,7 @@ if [[ ! -z "${PID}" ]]; then
 	echo -e "Host           : $domen" | tee -a /etc/log-create-user.log
 	echo -e "Name Server(NS): $nsdomain1" | tee -a /etc/log-create-user.log
 	echo -e "\e[33m══════════════════════\e[m"
-    echo -e "Pubkey         : $pubkey1" | tee -a /etc/log-create-user.log
+        echo -e "Pubkey         : $pubkey1" | tee -a /etc/log-create-user.log
 	echo -e "\e[33m══════════════════════\e[m"
 	echo -e ""
 	echo -e "IP             : $IP" | tee -a /etc/log-create-user.log
@@ -170,7 +170,7 @@ else
 	echo -e "Host           : $domen" | tee -a /etc/log-create-user.log
 	echo -e "Name Server(NS): $nsdomain1" | tee -a /etc/log-create-user.log
 	echo -e "\e[33m══════════════════════\e[m"
-    echo -e "Pubkey         : $pubkey1" | tee -a /etc/log-create-user.log
+        echo -e "Pubkey         : $pubkey1" | tee -a /etc/log-create-user.log
 	echo -e "\e[33m══════════════════════\e[m"
 	echo -e ""
 	echo -e "IP             : $IP" | tee -a /etc/log-create-user.log
