@@ -96,9 +96,9 @@ fi
 
 portsshws=$(cat ~/log-install.txt | grep -w "SSH Websocket" | cut -d: -f2 | awk '{print $1}')
 wsssl=$(cat /root/log-install.txt | grep -w "SSH SSL Websocket" | cut -d: -f2 | awk '{print $1}')
-echo -e "\e[33m═══════════════════════════════════════════════════════\e[m"
-echo -e " \E[1;47;30m                 SSH Account                  \E[0m"
-echo -e "\e[33m═══════════════════════════════════════════════════════\e[m"
+    echo -e "\e[33m╒═══════════════════════════════════════╕\033[0m" | tee -a /etc/log-create-user.log
+	echo -e " \E[1;47;30m            SSH Account                \E[0m"
+	echo -e "\e[33m╘═══════════════════════════════════════╛\033[0m" | tee -a /etc/log-create-user.log
 read -p " Username : " Login
 read -p " Password : " Pass
 read -p " Expired  : " masaaktif
@@ -122,94 +122,87 @@ exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$Pass\n$Pass\n" | passwd $Login &>/dev/null
 PID=$(ps -ef | grep -v grep | grep sshws | awk '{print $2}')
 if [[ ! -z "${PID}" ]]; then
-echo -e ""
-echo -e "\e[33m═══════════════════════════════════════════════════════\e[m"
-echo -e " \E[1;47;30m                 Informasi Account SSH & OpenVPN                  \E[0m"
-echo -e "\e[33m═══════════════════════════════════════════════════════\e[m"
-echo -e "\e[33m══════════════════════\e[m"
-echo -e "Username         : $Login" | tee -a /etc/log-create-user.log
-echo -e "Password         : $Pass" | tee -a /etc/log-create-user.log
-echo -e "Expired          : $exp1" | tee -a /etc/log-create-user.log
-echo -e "\e[33m══════════════════════\e[m"
-echo -e "Domain           : $domain" | tee -a /etc/log-create-user.log
-echo -e "Name Server(NS)  : $nsdomain1" | tee -a /etc/log-create-user.log
-echo -e "\e[33m══════════════════════\e[m"
-echo -e "Pubkey           : $pubkey1" | tee -a /etc/log-create-user.log
-echo -e "\e[33m══════════════════════\e[m"
-echo -e "IP/Host          : $MYIP" | tee -a /etc/log-create-user.log
-echo -e "OpenSSH          : 22" | tee -a /etc/log-create-user.log
-echo -e "Dropbear         : 143, 109" | tee -a /etc/log-create-user.log
-echo -e "SSL/TLS          :$ssl" | tee -a /etc/log-create-user.log
-echo -e "SlowDNS          : 22,80,443,53,5300" | tee -a /etc/log-create-user.log
-echo -e "SSH-UDP          : 1-65535" | tee -a /etc/log-create-user.log
-echo -e "WS SSH(HTTP)     : $wsdropbear" | tee -a /etc/log-create-user.log
-echo -e "WS SSL(HTTPS)    : $wsstunnel" | tee -a /etc/log-create-user.log
-echo -e "WS OpenVPN(HTTP) : $wsovpn" | tee -a /etc/log-create-user.log
-echo -e "OHP Dropbear     : $ohpdrop" | tee -a /etc/log-create-user.log
-echo -e "OHP OpenSSH      : $ohpssh" | tee -a /etc/log-create-user.log
-echo -e "OHP OpenVPN      : $ovpn3" | tee -a /etc/log-create-user.log
-echo -e "Port Squid       :$sqd" | tee -a /etc/log-create-user.log
-echo -e "Badvpn(UDPGW)    : 7100-7300" | tee -a /etc/log-create-user.log
-echo -e "\e[33m══════════════════════\e[m"
-""
-echo -e "\e[33m══════════════════════\e[m"
-echo -e "PAYLOAD WS       : GET / HTTP/1.1[crlf]Host: bug.com.$domain[crlf]Upgrade: websocket[crlf][crlf]" | tee -a /etc/log-create-user.log
-echo -e "\e[33m══════════════════════\e[m"
-echo -e "PAYLOAD WSS      : GET wss://$sni/ HTTP/1.1[crlf]Host: bug.com.$domain[crlf]Upgrade: websocket[crlf]Connection: Keep-Alive[crlf][crlf]" | tee -a /etc/log-create-user.log
-echo -e "\e[33m══════════════════════\e[m"
-echo -e "PAYLOAD WS OVPN  : GET wss://$sni/ HTTP/1.1[crlf]Host: bug.com.$domain[crlf]Upgrade: websocket[crlf]Connection: Keep-Alive[crlf][crlf]" | tee -a /etc/log-create-user.log
-echo -e "\e[33m══════════════════════\e[m"
-echo ""
-echo ""
-read -n 1 -s -r -p "Press any key to back on menu ssh"
-ssh
+	echo -e "\e[33m╒═══════════════════════════════════════╕\033[0m" | tee -a /etc/log-create-user.log
+	echo -e " \E[1;47;30m            SSH Account                \E[0m"
+	echo -e "\e[33m╘═══════════════════════════════════════╛\033[0m" | tee -a /etc/log-create-user.log
+	echo -e "\e[33m══════════════════════\e[m" | tee -a /etc/log-create-user.log
+	echo -e "Username       : $Login" | tee -a /etc/log-create-user.log
+	echo -e "Password       : $Pass" | tee -a /etc/log-create-user.log
+	echo -e "Created        : $harini" | tee -a /etc/log-create-user.log
+	echo -e "Expired On     : $exp" | tee -a /etc/log-create-user.log
+	echo -e "\e[33m══════════════════════\e[m" | tee -a /etc/log-create-user.log
+	echo -e "Host           : $domen" | tee -a /etc/log-create-user.log
+	echo -e "Name Server(NS): $nsdomain1" | tee -a /etc/log-create-user.log
+	echo -e "\e[33m══════════════════════\e[m" | tee -a /etc/log-create-user.log
+    echo -e "Pubkey         : $pubkey1" | tee -a /etc/log-create-user.log
+	echo -e "\e[33m══════════════════════\e[m" | tee -a /etc/log-create-user.log
+	echo -e "\033[0;34m
+\033[0m" | tee -a /etc/log-create-user.log
+	echo -e "IP             : $IP" | tee -a /etc/log-create-user.log
+	echo -e "Host           : $domen" | tee -a /etc/log-create-user.log
+	echo -e "OpenSSH        : $opensh" | tee -a /etc/log-create-user.log
+	echo -e "Dropbear       : $db" | tee -a /etc/log-create-user.log
+	echo -e "SSH WS         : $portsshws" | tee -a /etc/log-create-user.log
+	echo -e "SSH SSL WS     : $wsssl" | tee -a /etc/log-create-user.log
+	echo -e "SSL/TLS         :$ssl" | tee -a /etc/log-create-user.log
+	#echo -e "Port Squid : $sqd" | tee -a /etc/log-create-user.log
+	echo -e "UDPGW          : 7100-7300" | tee -a /etc/log-create-user.log
+	echo -e "\033[0;34m
+\033[0m" | tee -a /etc/log-create-user.log
+	#echo -e "OpenVPN Config : http://$IP:81/" | tee -a /etc/log-create-user.log
+	#echo -e "\033[0;34m
+	# \033[0m" | tee -a /etc/log-create-user.log
+	echo -e "Payload WS" | tee -a /etc/log-create-user.log
+	echo -e "\e[33m══════════════════════\e[m" | tee -a /etc/log-create-user.log
+GET / HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf] | tee -a /etc/log-create-user.log
+GET wss://bug.com HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf] | tee -a /etc/log-create-user.log
+GET ws://bug.com HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf] | tee -a /etc/log-create-user.log
+	echo -e "\e[33m══════════════════════\e[m" | tee -a /etc/log-create-user.log
+	echo -e ""
+	echo -e "Autoscript By KhaiVpn767"
+	echo -e ""
 else
-	echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
-echo -e ""
-echo -e "\e[33m═══════════════════════════════════════════════════════\e[m"
-echo -e " \E[1;47;30m         \e[30m[\e[$box Informasi Account SSH & OpenVPN                  \E[0m"
-echo -e "\e[33m═══════════════════════════════════════════════════════\e[m"
-echo -e "\e[33m══════════════════════\e[m"
-echo -e "Username         : $Login" | tee -a /etc/log-create-user.log
-echo -e "Password         : $Pass" | tee -a /etc/log-create-user.log
-echo -e "Expired          : $exp1" | tee -a /etc/log-create-user.log
-echo -e "\e[33m══════════════════════\e[m"
-echo -e "Domain           : $domain" | tee -a /etc/log-create-user.log
-echo -e "Name Server(NS)  : $nsdomain1" | tee -a /etc/log-create-user.log
-echo -e "\e[33m══════════════════════\e[m"
-echo -e "Pubkey           : $pubkey1" | tee -a /etc/log-create-user.log
-echo -e "\e[33m══════════════════════\e[m"
-echo -e "IP/Host          : $MYIP" | tee -a /etc/log-create-user.log
-echo -e "OpenSSH          : 22" | tee -a /etc/log-create-user.log
-echo -e "Dropbear         : 143, 109" | tee -a /etc/log-create-user.log
-echo -e "SSL/TLS          :$ssl" | tee -a /etc/log-create-user.log
-echo -e "SlowDNS          : 22,80,443,53,5300" | tee -a /etc/log-create-user.log
-echo -e "SSH-UDP          : 1-65535" | tee -a /etc/log-create-user.log
-echo -e "WS SSH(HTTP)     : $wsdropbear" | tee -a /etc/log-create-user.log
-echo -e "WS SSL(HTTPS)    : $wsstunnel" | tee -a /etc/log-create-user.log
-echo -e "WS OpenVPN(HTTP) : $wsovpn" | tee -a /etc/log-create-user.log
-echo -e "OHP Dropbear     : $ohpdrop" | tee -a /etc/log-create-user.log
-echo -e "OHP OpenSSH      : $ohpssh" | tee -a /etc/log-create-user.log
-echo -e "OHP OpenVPN      : $ovpn3" | tee -a /etc/log-create-user.log
-echo -e "Port Squid       :$sqd" | tee -a /etc/log-create-user.log
-echo -e "Badvpn(UDPGW)    : 7100-7300" | tee -a /etc/log-create-user.log
-echo -e "\e[33m══════════════════════\e[m"
-echo -e "CONFIG SSH WS" | tee -a /etc/log-create-user.log
-echo -e "--------------"
-echo -e "SSH-22      : $(cat /usr/local/etc/xray/domain):22@$Login:$Pass" | tee -a /etc/log-create-user.log
-echo -e "SSH-80      : $(cat /usr/local/etc/xray/domain):80@$Login:$Pass" | tee -a /etc/log-create-user.log
-echo -e "SSH-443     : $(cat /usr/local/etc/xray/domain):443@$Login:$Pass" | tee -a /etc/log-create-user.log
-echo -e "SSH-1-65535 : $MYIP:1-65535@$Login:$Pass" | tee -a /etc/log-create-user.log
-echo -e "\e[33m══════════════════════\e[m"
-""
-echo -e "\e[33m══════════════════════\e[m"
-echo -e "PAYLOAD WS       : GET / HTTP/1.1[crlf]Host: bug.com.$domain[crlf]Upgrade: websocket[crlf][crlf]" | tee -a /etc/log-create-user.log
-echo -e "\e[33m══════════════════════\e[m"
-echo -e "PAYLOAD WSS      : GET wss://$sni/ HTTP/1.1[crlf]Host: bug.com.$domain[crlf]Upgrade: websocket[crlf]Connection: Keep-Alive[crlf][crlf]" | tee -a /etc/log-create-user.log
-echo -e "\e[33m══════════════════════\e[m"
-echo -e "PAYLOAD WS OVPN  : GET wss://$sni/ HTTP/1.1[crlf]Host: bug.com.$domain[crlf]Upgrade: websocket[crlf]Connection: Keep-Alive[crlf][crlf]" | tee -a /etc/log-create-user.log
-echo -e "\e[33m══════════════════════\e[m"
-echo ""
-echo ""
-read -n 1 -s -r -p "Press any key to back on menu ssh"
-ssh
+	echo -e "\e[33m╒═══════════════════════════════════════╕\033[0m" | tee -a /etc/log-create-user.log
+	echo -e " \E[1;47;30m            SSH Account                \E[0m"
+	echo -e "\e[33m╘═══════════════════════════════════════╛\033[0m" | tee -a /etc/log-create-user.log
+	echo -e "\e[33m══════════════════════\e[m" | tee -a /etc/log-create-user.log
+	echo -e "Username       : $Login" | tee -a /etc/log-create-user.log
+	echo -e "Password       : $Pass" | tee -a /etc/log-create-user.log
+	echo -e "Created        : $harini" | tee -a /etc/log-create-user.log
+	echo -e "Expired On     : $exp" | tee -a /etc/log-create-user.log
+	echo -e "\e[33m══════════════════════\e[m" | tee -a /etc/log-create-user.log
+	echo -e "Host           : $domen" | tee -a /etc/log-create-user.log
+	echo -e "Name Server(NS): $nsdomain1" | tee -a /etc/log-create-user.log
+	echo -e "\e[33m══════════════════════\e[m" | tee -a /etc/log-create-user.log
+    echo -e "Pubkey         : $pubkey1" | tee -a /etc/log-create-user.log
+	echo -e "\e[33m══════════════════════\e[m" | tee -a /etc/log-create-user.log
+	echo -e "\033[0;34m
+\033[0m"
+	echo -e "IP             : $IP" | tee -a /etc/log-create-user.log
+	echo -e "Host           : $domen" | tee -a /etc/log-create-user.log
+	echo -e "OpenSSH        : $opensh" | tee -a /etc/log-create-user.log
+	echo -e "Dropbear       : $db" | tee -a /etc/log-create-user.log
+	echo -e "SSH WS         : $portsshws" | tee -a /etc/log-create-user.log
+	echo -e "SSH SSL WS     : $wsssl" | tee -a /etc/log-create-user.log
+	echo -e "SSL/TLS        :$ssl" | tee -a /etc/log-create-user.log
+	#echo -e "Port Squid    : $sqd" | tee -a /etc/log-create-user.log
+	echo -e "UDPGW          : 7100-7300" | tee -a /etc/log-create-user.log
+	echo -e "\033[0;34m
+\033[0m" | tee -a /etc/log-create-user.log
+	#echo -e "OpenVPN Config : http://$IP:81/" | tee -a /etc/log-create-user.log
+	echo -e "\033[0;34m
+\033[0m" | tee -a /etc/log-create-user.log
+\033[0m" | tee -a /etc/log-create-user.log
+	echo -e "
+	echo -e "\e[33m══════════════════════\e[m" | tee -a /etc/log-create-user.log
+GET / HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf] | tee -a /etc/log-create-user.log
+GET wss://bug.com HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf] | tee -a /etc/log-create-user.log
+GET ws://bug.com HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf] | tee -a /etc/log-create-user.log
+	echo -e "\e[33m══════════════════════\e[m" | tee -a /etc/log-create-user.log
+" | tee -a /etc/log-create-user.log
+	echo -e "\033[0;34m
+\033[0m" | tee -a /etc/log-create-user.log
+	echo -e ""
+	echo -e "Autoscript By KhaiVpn767
+	echo "" | tee -a /etc/log-create-user.log"
+fi
