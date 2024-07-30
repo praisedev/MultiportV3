@@ -121,7 +121,7 @@ exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$Pass\n$Pass\n" | passwd $Login &>/dev/null
 PID=$(ps -ef | grep -v grep | grep sshws | awk '{print $2}')
 if [[ ! -z "${PID}" ]]; then
-	echo -e "\e[33m╒═══════════════════════════════════════╕\033[0m" | tee -a /etc/log-create-user.log | tee -a /etc/log-create-user.log
+	echo -e "\e[33m╒═══════════════════════════════════════╕\033[0m" | tee -a /etc/log-create-user.log
 	echo -e " \E[1;47;30m            SSH Account                \E[0m" | tee -a /etc/log-create-user.log
 	echo -e "\e[33m╘═══════════════════════════════════════╛\033[0m" | tee -a /etc/log-create-user.log
 	echo -e "Username       : $Login" | tee -a /etc/log-create-user.log
