@@ -49,8 +49,8 @@ BURIQ() {
 	rm -f /root/tmp
 }
 
-MYIP=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/SSH-XRAY-Websocket-Multiport/main/LICENSE/access | awk '{print $2}')
-Name=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/SSH-XRAY-Websocket-Multiport/main/LICENSE/access | grep $MYIP | awk '{print $4}')
+MYIP=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | grep $MYIP | awk '{print $4}')
 echo $Name >/usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -66,8 +66,8 @@ Bloman() {
 }
 
 PERMISSION() {
-	MYIP=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/SSH-XRAY-Websocket-Multiport/main/LICENSE/access | awk '{print $2}')
-	IZIN=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/SSH-XRAY-Websocket-Multiport/main/LICENSE/access | awk '{print $2}' | grep $MYIP)
+	MYIP=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $2}')
+	IZIN=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $2}' | grep $MYIP)
 	if [[ "$MYIP" = "$IZIN" ]]; then
 		Bloman
 	else
