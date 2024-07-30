@@ -115,8 +115,8 @@ ovpn2="$(netstat -nlpu | grep -i openvpn | grep -i 0.0.0.0 | awk '{print $4}' | 
 OhpSSH=$(cat /root/log-install.txt | grep -w "OHP SSH" | cut -d: -f2 | awk '{print $1}')
 OhpDB=$(cat /root/log-install.txt | grep -w "OHP DBear" | cut -d: -f2 | awk '{print $1}')
 OhpOVPN=$(cat /root/log-install.txt | grep -w "OHP OpenVPN" | cut -d: -f2 | awk '{print $1}')
-nsdomain1=$(cat /root/nsdomain)
-pubkey1=$(cat /etc/slowdns/server.pub)
+nsdomain1=$(cat /root/nsdomain) | grep -w "nsdomain" | cut -d: -f2 | awk '{print $1}')
+pubkey1=$(cat /etc/slowdns/server.pub) | grep -w "pubkey" | cut -d: -f2 | awk '{print $1}')
 sleep 1
 clear
 useradd -e $(date -d "$masaaktif days" +"%Y-%m-%d") -s /bin/false -M $Login
