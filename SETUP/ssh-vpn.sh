@@ -325,7 +325,7 @@ wget -O dns "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/d
 wget -O nf "https://raw.githubusercontent.com/KhaiVpn767/MediaUnlockerTest/main/media.sh"
 chmod +x limit
 chmod +x bbr
-chmod +x usernew
+chmod +x add-ssh
 chmod +x ceklim
 chmod +x menu
 chmod +x delete
