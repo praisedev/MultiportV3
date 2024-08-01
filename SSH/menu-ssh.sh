@@ -22,7 +22,7 @@ echo -ne "Select menu : "
 read x
 if [[ $(cat /opt/.ver) = $serverV ]] >/dev/null 2>&1; then
 	if [[ $x -eq 1 ]]; then
-		usernew
+		add-ssh2
 		read -n1 -r -p "Press any key to continue..."
 		menu
 	elif [[ $x -eq 2 ]]; then
