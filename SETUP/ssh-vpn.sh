@@ -303,7 +303,7 @@ systemctl enable resolvconf.service
 cd /usr/bin
 wget -O limit "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/limit-speed.sh"
 wget -O bbr "https://raw.githubusercontent.com/KhaiVpn767/KhaiVpn767-TCP-BBR/main/bbr.sh"
-wget -O add-ssh2 "https://raw.githubusercontent.com/KhaiVpn767/multiport/main/add-user/add-ssh.sh”
+wget -O add-ssh "https://raw.githubusercontent.com/KhaiVpn767/multiport/main/add-user/add-ssh.sh”
 wget -O ceklim "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/ceklim.sh"
 wget -O delete "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/delete.sh"
 wget -O hapus "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/hapus.sh"
