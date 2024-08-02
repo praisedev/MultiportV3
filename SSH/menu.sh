@@ -120,6 +120,11 @@ else
 	status_xray="${RED}OFF${NC}"
 fi
 
+# Getting CPU Information
+cpu_usage1="$(ps aux | awk 'BEGIN {sum=0} {sum+=$3}; END {print sum}')"
+cpu_usage="$((${cpu_usage1/\.*/} / ${corediilik:-1}))"
+cpu_usage+=" %"
+
 # // script version
 myver="$(cat /home/ver)"
 # // script version check
@@ -173,15 +178,16 @@ else
 	echo -e " System Uptime   :  $uphours $upminutes"
 fi
 echo -e " Memory Usage    :  $uram / $tram"
+echo -e " CPU Usage       :  $cpu_usage"
 echo -e " VPN Core        :  XRAY-CORE"
 echo -e " Domain          :  $domain"
+echo -e " Name Server(NS) :  $nsdomain1"
 echo -e " IP VPS          :  $IPVPS"
-echo -e "Name Server(NS)  :  $nsdomain1"
 echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
 echo -e "     [ XRAY-CORE${NC} : ${status_xray} ]   [ NGINX${NC} : ${status_nginx} ]"
 echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m"
 echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
-echo -e "  \033[1;33mSSH XRAY WEBSOCKET MULTIPORT BY KhaiVpn767\033[0m"
+echo -e "  \033[1;33mSSH XRAY WEBSOCKET MULTIPORT BY KhaiVpn\033[0m"
 echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m"
 echo -e "\e[33m Traffic\e[0m     ${P}Today     Yesterday     Month     ${N}"
 echo -e "\e[33m Download\e[0m   $dtoday    $dyest     $dmon       "
@@ -216,14 +222,7 @@ echo -e "\e[33m╘════════════════════�
 [\033[1;33m17\033[0m]  Backup
 [\033[1;33m18\033[0m]  Restore
 [\033[1;33m19\033[0m]  Reboot"
-
-if [[ $serverV > $myver ]]; then
-	echo -e "[\033[1;33m20\033[0m]  Update Autoscript To V$serverV\n"
-	up2u="updatews"
-else
-	up2u="menu"
-fi
-
+echo "" 
 echo -e " \033[1;37mPress [ Ctrl+C ]
  To-Exit-Script\033[0m"
 echo ""
