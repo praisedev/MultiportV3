@@ -211,15 +211,16 @@ echo -e "\e[0;32mDONE INSTALLING XRAY CORE\e[0m"
 echo -e ""
 sleep 1
 clear
-#Install slow-dns
-wget https://raw.githubusercontent.com/KhaiVpn767/SlowDnsV1/main/dns2.sh && chmod +x dns2.sh && ./dns2.sh
-echo -e ""
-sleep 1
 #Install SET-BR
 echo -e "\e[0;32mINSTALLING SET-BR...\e[0m"
 sleep 1
 wget https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SETUP/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 echo -e "\e[0;32mDONE INSTALLING SET-BR...\e[0m"
+echo -e ""
+sleep 1
+clear
+#Install slow-dns
+wget https://raw.githubusercontent.com/KhaiVpn767/SlowDnsV1/main/dns2.sh && chmod +x dns2.sh && ./dns2.sh
 echo -e ""
 sleep 1
 clear
