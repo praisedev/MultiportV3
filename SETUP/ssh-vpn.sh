@@ -310,7 +310,7 @@ wget -O hapus "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH
 wget -O member "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/member.sh"
 wget -O renew "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/renew.sh"
 wget -O cek "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/cek.sh"
-wget -O trial "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/trial.sh"
+wget -O trial "https://raw.githubusercontent.com/KhaiVpn767/multiport/main/add-user/trial.sh"
 wget -O autokill "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/autokill.sh"
 wget -O tendang "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/tendang.sh"
 wget -O add-host "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/add-host.sh"
