@@ -166,6 +166,7 @@ upminutes=$(uptime -p | awk '{print $4,$5}' | cut -d , -f1)
 uptimecek=$(uptime -p | awk '{print $6,$7}' | cut -d , -f1)
 cekup=$(uptime -p | grep -ow "day")
 IPVPS=$(curl -s icanhazip.com/ip)
+nsdomain1=$(cat /root/nsdomain)
 if [ "$cekup" = "day" ]; then
 	echo -e " System Uptime   :  $uphours $upminutes $uptimecek"
 else
@@ -175,6 +176,7 @@ echo -e " Memory Usage    :  $uram / $tram"
 echo -e " VPN Core        :  XRAY-CORE"
 echo -e " Domain          :  $domain"
 echo -e " IP VPS          :  $IPVPS"
+echo -e "Name Server(NS)  :  $nsdomain1"
 echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
 echo -e "     [ XRAY-CORE${NC} : ${status_xray} ]   [ NGINX${NC} : ${status_nginx} ]"
 echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m"
