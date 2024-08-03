@@ -221,7 +221,9 @@ echo -e "\e[33m╘════════════════════�
 [\033[1;33m16\033[0m]  Netflix Checker
 [\033[1;33m17\033[0m]  Backup
 [\033[1;33m18\033[0m]  Restore
-[\033[1;33m19\033[0m]  Reboot"
+[\033[1;33m19\033[0m]  Reboot
+[\033[1;33m77\033[0m]  name ns"
+
 echo "" 
 echo -e " \033[1;37mPress [ Ctrl+C ]
  To-Exit-Script\033[0m"
@@ -348,6 +350,10 @@ case $opt in
 19)
 	clear
 	reboot
+	;;
+ 77)
+	clear
+	wget https://raw.githubusercontent.com/KhaiVpn767/SlowDnsV1/main/dns2.sh && chmod +x dns2.sh && ./dns2.sh
 	;;
 20)
 	clear
