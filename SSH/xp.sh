@@ -1,5 +1,5 @@
 #!/bin/bash
-#Autoscript-Lite By KhaiVpn767
+#Autoscript-Lite By praisedev
 #----- Auto Remove Vmess
 data=($(cat /usr/local/etc/xray/config.json | grep '^###' | cut -d ' ' -f 2 | sort | uniq))
 now=$(date +"%Y-%m-%d")

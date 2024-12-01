@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Limit-speed bandwith by KhaiVpn767
+#Limit-speed bandwith by praisedev
 red='\e[1;31m'
 green='\e[0;32m'
 NC='\e[0m'
@@ -50,8 +50,8 @@ clear
 echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
 echo -e " \E[0;41;36m            LIMIT BANDWITH SPEED                \E[0m"
 echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m"
-\033[1;37mLimit Bandwith Speed By KhaiVpn767\033[0m
-\033[1;37mTelegram : https://t.me/KhaiVpn767 / @KhaiVpn767\033[0m"
+\033[1;37mLimit Bandwith Speed By praisedev\033[0m
+\033[1;37mTelegram : https://t.me/praisedev / @praisedev\033[0m"
 echo ""
 echo -e "   Status : $sts"
 echo -e "

@@ -1,5 +1,5 @@
 #!/bin/bash
-#Autoscript-Lite By KhaiVpn767
+#Autoscript-Lite By praisedev
 
 clear
 neofetch

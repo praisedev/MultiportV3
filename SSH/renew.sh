@@ -32,7 +32,7 @@ echo -e ""
 echo -e "\033[0;34m
 \033[0m"
 echo -e ""
-echo -e "Autoscript By KhaiVpn767"
+echo -e "Autoscript By praisedev"
 echo -e ""
 else
 clear
@@ -45,5 +45,5 @@ echo -e ""
 echo -e "\033[0;34m
 \033[0m"
 echo -e ""
-echo -e "Autoscript By KhaiVpn767"
+echo -e "Autoscript By praisedev"
 echo -e ""

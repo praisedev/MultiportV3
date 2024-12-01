@@ -1,11 +1,11 @@
 #!/bin/bash
 # SSH-VPN Installation Setup
-# By KhaiVpn767
+# By praisedev
 # ==================================
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=$(date +"%Y-%m-%d" -d "$dateFromServer")
 #########################
-MYIP=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $2}')
+MYIP=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | awk '{print $2}')
 clear
 red='\e[1;31m'
 green='\e[0;32m'
@@ -19,8 +19,8 @@ yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 
-cek=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $2}' | grep $MYIP)
-Name=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | grep $MYIP | awk '{print $4}')
+cek=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | awk '{print $2}' | grep $MYIP)
+Name=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | grep $MYIP | awk '{print $4}')
 
 if [[ $cek = $MYIP ]]; then
 	echo -e "${green}Permission Accepted...${NC}"
@@ -30,12 +30,12 @@ else
 	echo -e "Your IP is ${red}NOT REGISTER${NC} @ ${red}EXPIRED${NC}"
 	echo ""
 	echo -e "Please Contact ${green}Admin${NC}"
-	echo -e "Telegram : t.me/KhaiVpn767"
+	echo -e "Telegram : t.me/praisedev"
 	exit 0
 fi
 clear
 BURIQ() {
-	curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access >/root/tmp
+	curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access >/root/tmp
 	data=($(cat /root/tmp | grep -E "^### " | awk '{print $4}'))
 	for user in "${data[@]}"; do
 		exp=($(grep -E "^### $user" "/root/tmp" | awk '{print $3}'))
@@ -51,8 +51,8 @@ BURIQ() {
 	rm -f /root/tmp
 }
 
-MYIP=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $2}')
-Name=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | grep $MYIP | awk '{print $4}')
+MYIP=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | grep $MYIP | awk '{print $4}')
 echo $Name >/usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -68,8 +68,8 @@ Bloman() {
 }
 
 PERMISSION() {
-	MYIP=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $2}')
-	IZIN=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $2}' | grep $MYIP)
+	MYIP=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | awk '{print $2}')
+	IZIN=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | awk '{print $2}' | grep $MYIP)
 	if [[ "$MYIP" = "$IZIN" ]]; then
 		Bloman
 	else
@@ -98,13 +98,13 @@ ver=$VERSION_ID
 country="MY"
 state="Perak"
 locality="Perak"
-organization="KhaiVpn767-Project"
-organizationalunit="KhaiVpn767-Project"
-commonname="KhaiVpn767-Project"
-email="KhaiVpn767-project@gmail.com"
+organization="praisedev-Project"
+organizationalunit="praisedev-Project"
+commonname="praisedev-Project"
+email="praisedev-project@gmail.com"
 
 # simple password minimal
-curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 >/etc/pam.d/common-password
+curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/SSH/password | openssl aes-256-cbc -d -a -pass pass:scvps07gg -pbkdf2 >/etc/pam.d/common-password
 chmod +x /etc/pam.d/common-password
 
 # go to root
@@ -164,12 +164,12 @@ echo "menu" >>.profile
 apt -y install nginx
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/OTHERS/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/praisedev/MultiportV3/main/OTHERS/nginx.conf"
 mkdir -p /home/vps/public_html
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/OTHERS/vps.conf"
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/praisedev/MultiportV3/main/OTHERS/vps.conf"
 /etc/init.d/nginx restart
 # install badvpn
-wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/newudpgw"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/praisedev/MultiportV3/main/SSH/newudpgw"
 chmod +x /usr/bin/badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
@@ -271,7 +271,7 @@ echo 'Config file is at /usr/local/ddos/ddos.conf'
 echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 
 # banner /etc/issue.net
-wget -q -O /etc/issue.net "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/OTHERS/issues.net" && chmod +x /etc/issue.net
+wget -q -O /etc/issue.net "https://raw.githubusercontent.com/praisedev/MultiportV3/main/OTHERS/issues.net" && chmod +x /etc/issue.net
 echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
@@ -301,28 +301,28 @@ systemctl enable resolvconf.service
 
 # download script
 cd /usr/bin
-wget -O limit "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/limit-speed.sh"
-wget -O bbr "https://raw.githubusercontent.com/KhaiVpn767/KhaiVpn767-TCP-BBR/main/bbr.sh"
-wget -O add-ssh "https://raw.githubusercontent.com/KhaiVpn767/multiport/main/add-user/add-ssh.sh"
-wget -O ceklim "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/ceklim.sh"
-wget -O delete "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/delete.sh"
-wget -O hapus "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/hapus.sh"
-wget -O member "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/member.sh"
-wget -O renew "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/renew.sh"
-wget -O cek "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/cek.sh"
-wget -O trial "https://raw.githubusercontent.com/KhaiVpn767/multiport/main/add-user/trial.sh"
-wget -O autokill "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/autokill.sh"
-wget -O tendang "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/tendang.sh"
-wget -O add-host "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/add-host.sh"
-wget -O speedtest "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/speedtest_cli.py"
-wget -O xp "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/xp.sh"
-wget -O menu "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/menu.sh"
-wget -O status "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/status.sh"
-wget -O info "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/info.sh"
-wget -O restart "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/restart.sh"
-wget -O ram "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/ram.sh"
-wget -O dns "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/dns.sh"
-wget -O nf "https://raw.githubusercontent.com/KhaiVpn767/MediaUnlockerTest/main/media.sh"
+wget -O limit "https://raw.githubusercontent.com/praisedev/MultiportV3/main/SSH/limit-speed.sh"
+wget -O bbr "https://raw.githubusercontent.com/praisedev/praisedev-TCP-BBR/main/bbr.sh"
+wget -O add-ssh "https://raw.githubusercontent.com/praisedev/multiport/main/add-user/add-ssh.sh"
+wget -O ceklim "https://raw.githubusercontent.com/praisedev/MultiportV3/main/SSH/ceklim.sh"
+wget -O delete "https://raw.githubusercontent.com/praisedev/MultiportV3/main/SSH/delete.sh"
+wget -O hapus "https://raw.githubusercontent.com/praisedev/MultiportV3/main/SSH/hapus.sh"
+wget -O member "https://raw.githubusercontent.com/praisedev/MultiportV3/main/SSH/member.sh"
+wget -O renew "https://raw.githubusercontent.com/praisedev/MultiportV3/main/SSH/renew.sh"
+wget -O cek "https://raw.githubusercontent.com/praisedev/MultiportV3/main/SSH/cek.sh"
+wget -O trial "https://raw.githubusercontent.com/praisedev/multiport/main/add-user/trial.sh"
+wget -O autokill "https://raw.githubusercontent.com/praisedev/MultiportV3/main/SSH/autokill.sh"
+wget -O tendang "https://raw.githubusercontent.com/praisedev/MultiportV3/main/SSH/tendang.sh"
+wget -O add-host "https://raw.githubusercontent.com/praisedev/MultiportV3/main/SSH/add-host.sh"
+wget -O speedtest "https://raw.githubusercontent.com/praisedev/MultiportV3/main/SSH/speedtest_cli.py"
+wget -O xp "https://raw.githubusercontent.com/praisedev/MultiportV3/main/SSH/xp.sh"
+wget -O menu "https://raw.githubusercontent.com/praisedev/MultiportV3/main/SSH/menu.sh"
+wget -O status "https://raw.githubusercontent.com/praisedev/MultiportV3/main/SSH/status.sh"
+wget -O info "https://raw.githubusercontent.com/praisedev/MultiportV3/main/SSH/info.sh"
+wget -O restart "https://raw.githubusercontent.com/praisedev/MultiportV3/main/SSH/restart.sh"
+wget -O ram "https://raw.githubusercontent.com/praisedev/MultiportV3/main/SSH/ram.sh"
+wget -O dns "https://raw.githubusercontent.com/praisedev/MultiportV3/main/SSH/dns.sh"
+wget -O nf "https://raw.githubusercontent.com/praisedev/MediaUnlockerTest/main/media.sh"
 chmod +x limit
 chmod +x bbr
 chmod +x add-ssh

@@ -1,5 +1,5 @@
 #!/bin/bash
-#Autoscript-Lite By KhaiVpn767
+#Autoscript-Lite By praisedev
 clear
 red='\e[1;31m'
 green='\e[0;32m'
@@ -51,5 +51,5 @@ echo " Expired On  : $exp"
 echo -e "\033[0;34m
 \033[0m"
 echo -e ""
-echo -e "Autoscript By KhaiVpn767"
+echo -e "Autoscript By praisedev"
 echo -e ""

@@ -3,7 +3,7 @@ clear
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=$(date +"%Y-%m-%d" -d "$dateFromServer")
 #########################
-MYIP=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $2}')
+MYIP=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | awk '{print $2}')
 clear
 red='\e[1;31m'
 green='\e[0;32m'
@@ -18,8 +18,8 @@ yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 
-cek=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $2}' | grep $MYIP)
-Name=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | grep $MYIP | awk '{print $4}')
+cek=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | awk '{print $2}' | grep $MYIP)
+Name=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | grep $MYIP | awk '{print $4}')
 if [[ $cek = $MYIP ]]; then
 	echo -e "${green}Permission Accepted...${NC}"
 else
@@ -34,7 +34,7 @@ fi
 
 clear
 BURIQ() {
-	curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access >/root/tmp
+	curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access >/root/tmp
 	data=($(cat /root/tmp | grep -E "^### " | awk '{print $4}'))
 	for user in "${data[@]}"; do
 		exp=($(grep -E "^### $user" "/root/tmp" | awk '{print $3}'))
@@ -50,8 +50,8 @@ BURIQ() {
 	rm -f /root/tmp
 }
 
-MYIP=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $2}')
-Name=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | grep $MYIP | awk '{print $4}')
+MYIP=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | grep $MYIP | awk '{print $4}')
 echo $Name >/usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -67,8 +67,8 @@ Bloman() {
 }
 
 PERMISSION() {
-	MYIP=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $2}')
-	IZIN=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $2}' | grep $MYIP)
+	MYIP=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | awk '{print $2}')
+	IZIN=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | awk '{print $2}' | grep $MYIP)
 	if [[ "$MYIP" = "$IZIN" ]]; then
 		Bloman
 	else
@@ -158,7 +158,7 @@ GET ws://bug.com HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]
 	echo -e "\033[0;34m
 \033[0m" | tee -a /etc/log-create-user.log
 	echo -e ""
-	echo -e "Autoscript By KhaiVpn767"
+	echo -e "Autoscript By praisedev"
 	echo -e ""
 else
 	echo -e "\033[0;34m
@@ -196,6 +196,6 @@ GET ws://bug.com HTTP/1.1[crlf]Host: $domen[crlf]Upgrade: websocket[crlf][crlf]
 	echo -e "\033[0;34m
 \033[0m" | tee -a /etc/log-create-user.log
 	echo -e ""
-	echo -e "Autoscript By KhaiVpn767"
+	echo -e "Autoscript By praisedev"
 	echo "" | tee -a /etc/log-create-user.log
 fi

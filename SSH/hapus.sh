@@ -13,11 +13,11 @@ if getent passwd $Pengguna >/dev/null 2>&1; then
 	userdel $Pengguna >/dev/null 2>&1
 	echo -e "User ${green}$Pengguna${NC} was removed."
 	echo -e ""
-	echo -e "Autoscript By KhaiVpn767"
+	echo -e "Autoscript By praisedev"
 	echo -e ""
 else
 	echo -e "Failure: User ${red}$Pengguna${NC} Not Exist."
 	echo -e ""
-	echo -e "Autoscript By KhaiVpn767"
+	echo -e "Autoscript By praisedev"
 	echo -e ""
 fi

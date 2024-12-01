@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Autoscript-Lite By KhaiVpn767
+#Autoscript-Lite By praisedev
 P='\e[0;35m'
 B='\033[0;36m'
 N='\e[0m'

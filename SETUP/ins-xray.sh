@@ -1,11 +1,11 @@
 #!/bin/bash
 # XRAY Core & Trojan-Go Installation Setup
-# By KhaiVpn767
+# By praisedev
 #------------------------------------------
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=$(date +"%Y-%m-%d" -d "$dateFromServer")
 #########################
-MYIP=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $2}')
+MYIP=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | awk '{print $2}')
 clear
 
 red='\e[1;31m'
@@ -20,8 +20,8 @@ yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 
-cek=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $2}' | grep $MYIP)
-Name=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | grep $MYIP | awk '{print $4}')
+cek=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | awk '{print $2}' | grep $MYIP)
+Name=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | grep $MYIP | awk '{print $4}')
 if [[ $cek = $MYIP ]]; then
 	echo -e "${green}Permission Accepted...${NC}"
 else
@@ -30,13 +30,13 @@ else
 	echo -e "Your IP is ${red}NOT REGISTER${NC} @ ${red}EXPIRED${NC}"
 	echo ""
 	echo -e "Please Contact ${green}Admin${NC}"
-	echo -e "Telegram : t.me/KhaiVpn767"
+	echo -e "Telegram : t.me/praisedev"
 	exit 0
 	clear
 fi
 
 BURIQ() {
-	curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access >/root/tmp
+	curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access >/root/tmp
 	data=($(cat /root/tmp | grep -E "^### " | awk '{print $4}'))
 	for user in "${data[@]}"; do
 		exp=($(grep -E "^### $user" "/root/tmp" | awk '{print $3}'))
@@ -52,8 +52,8 @@ BURIQ() {
 	rm -f /root/tmp
 }
 
-MYIP=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $2}')
-Name=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | grep $MYIP | awk '{print $4}')
+MYIP=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | grep $MYIP | awk '{print $4}')
 echo $Name >/usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -69,8 +69,8 @@ Bloman() {
 }
 
 PERMISSION() {
-	MYIP=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $2}')
-	IZIN=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $2}' | grep $MYIP)
+	MYIP=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | awk '{print $2}')
+	IZIN=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | awk '{print $2}' | grep $MYIP)
 	if [[ "$MYIP" = "$IZIN" ]]; then
 		Bloman
 	else
@@ -916,7 +916,7 @@ rm -rf /etc/systemd/system/xray@.service.d
 cat >/etc/systemd/system/xray.service <<END
 [Unit]
 Description=XRAY-Websocket Service
-Documentation=https://KhaiVpn767-Project.net https://github.com/XTLS/Xray-core
+Documentation=https://praisedev-Project.net https://github.com/XTLS/Xray-core
 After=network.target nss-lookup.target
 [Service]
 User=root
@@ -936,7 +936,7 @@ END
 cat >/etc/systemd/system/xray@.service <<END
 [Unit]
 Description=XRAY-Websocket Service
-Documentation=https://KhaiVpn767-Project.net https://github.com/XTLS/Xray-core
+Documentation=https://praisedev-Project.net https://github.com/XTLS/Xray-core
 After=network.target nss-lookup.target
 [Service]
 User=root
@@ -1124,43 +1124,43 @@ cd /usr/bin
 echo -e "[ ${green}INFO${NC} ] Downloading Vmess WS Files"
 sleep 1
 
-wget -O add-ws "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/XRAY/add-ws.sh" && chmod +x add-ws
-wget -O cek-ws "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/XRAY/cek-ws.sh" && chmod +x cek-ws
-wget -O del-ws "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/XRAY/del-ws.sh" && chmod +x del-ws
-wget -O renew-ws "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/XRAY/renew-ws.sh" && chmod +x renew-ws
-wget -O user-ws "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/XRAY/user-ws.sh" && chmod +x user-ws
+wget -O add-ws "https://raw.githubusercontent.com/praisedev/MultiportV3/main/XRAY/add-ws.sh" && chmod +x add-ws
+wget -O cek-ws "https://raw.githubusercontent.com/praisedev/MultiportV3/main/XRAY/cek-ws.sh" && chmod +x cek-ws
+wget -O del-ws "https://raw.githubusercontent.com/praisedev/MultiportV3/main/XRAY/del-ws.sh" && chmod +x del-ws
+wget -O renew-ws "https://raw.githubusercontent.com/praisedev/MultiportV3/main/XRAY/renew-ws.sh" && chmod +x renew-ws
+wget -O user-ws "https://raw.githubusercontent.com/praisedev/MultiportV3/main/XRAY/user-ws.sh" && chmod +x user-ws
 
 # // VLESS WS FILES
 echo -e "[ ${green}INFO${NC} ] Downloading Vless WS Files"
 sleep 1
 
-wget -O add-vless "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/XRAY/add-vless.sh" && chmod +x add-vless
-wget -O cek-vless "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/XRAY/cek-vless.sh" && chmod +x cek-vless
-wget -O del-vless "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/XRAY/del-vless.sh" && chmod +x del-vless
-wget -O renew-vless "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/XRAY/renew-vless.sh" && chmod +x renew-vless
-wget -O user-vless "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/XRAY/user-vless.sh" && chmod +x user-vless
+wget -O add-vless "https://raw.githubusercontent.com/praisedev/MultiportV3/main/XRAY/add-vless.sh" && chmod +x add-vless
+wget -O cek-vless "https://raw.githubusercontent.com/praisedev/MultiportV3/main/XRAY/cek-vless.sh" && chmod +x cek-vless
+wget -O del-vless "https://raw.githubusercontent.com/praisedev/MultiportV3/main/XRAY/del-vless.sh" && chmod +x del-vless
+wget -O renew-vless "https://raw.githubusercontent.com/praisedev/MultiportV3/main/XRAY/renew-vless.sh" && chmod +x renew-vless
+wget -O user-vless "https://raw.githubusercontent.com/praisedev/MultiportV3/main/XRAY/user-vless.sh" && chmod +x user-vless
 # // TROJAN WS FILES
 echo -e "[ ${green}INFO${NC} ] Downloading Trojan WS Files"
 sleep 1
-wget -O add-tr "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/XRAY/add-tr.sh" && chmod +x add-tr
-wget -O cek-tr "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/XRAY/cek-tr.sh" && chmod +x cek-tr
-wget -O del-tr "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/XRAY/del-tr.sh" && chmod +x del-tr
-wget -O renew-tr "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/XRAY/renew-tr.sh" && chmod +x renew-tr
-wget -O user-tr "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/XRAY/user-tr.sh" && chmod +x user-tr
+wget -O add-tr "https://raw.githubusercontent.com/praisedev/MultiportV3/main/XRAY/add-tr.sh" && chmod +x add-tr
+wget -O cek-tr "https://raw.githubusercontent.com/praisedev/MultiportV3/main/XRAY/cek-tr.sh" && chmod +x cek-tr
+wget -O del-tr "https://raw.githubusercontent.com/praisedev/MultiportV3/main/XRAY/del-tr.sh" && chmod +x del-tr
+wget -O renew-tr "https://raw.githubusercontent.com/praisedev/MultiportV3/main/XRAY/renew-tr.sh" && chmod +x renew-tr
+wget -O user-tr "https://raw.githubusercontent.com/praisedev/MultiportV3/main/XRAY/user-tr.sh" && chmod +x user-tr
 
 # // OTHER FILES
 echo -e "[ ${green}INFO${NC} ] Downloading Others Files"
-wget -O certxray "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/XRAY/cert.sh" && chmod +x certxray
+wget -O certxray "https://raw.githubusercontent.com/praisedev/MultiportV3/main/XRAY/cert.sh" && chmod +x certxray
 sleep 1
 
 # // MENU FILES
 echo -e "[ ${green}INFO${NC} ] Downloading Menu Files"
 sleep 1
 
-wget -O menu-ws "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/menu-ws.sh" && chmod +x menu-ws
-wget -O menu-vless "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/menu-vless.sh" && chmod +x menu-vless
-wget -O menu-tr "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/menu-tr.sh" && chmod +x menu-tr
-wget -O menu-ssh "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/menu-ssh.sh" && chmod +x menu-ssh
+wget -O menu-ws "https://raw.githubusercontent.com/praisedev/MultiportV3/main/SSH/menu-ws.sh" && chmod +x menu-ws
+wget -O menu-vless "https://raw.githubusercontent.com/praisedev/MultiportV3/main/SSH/menu-vless.sh" && chmod +x menu-vless
+wget -O menu-tr "https://raw.githubusercontent.com/praisedev/MultiportV3/main/SSH/menu-tr.sh" && chmod +x menu-tr
+wget -O menu-ssh "https://raw.githubusercontent.com/praisedev/MultiportV3/main/SSH/menu-ssh.sh" && chmod +x menu-ssh
 mv /root/domain /usr/local/etc/xray/
 rm -rf ins-xray.sh
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Autoscript-Lite By KhaiVpn767
+#Autoscript-Lite By praisedev
 P='\e[0;35m'
 B='\033[0;36m'
 G='\e[0;32m'
@@ -10,7 +10,7 @@ clear
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=$(date +"%Y-%m-%d" -d "$dateFromServer")
 #########################
-MYIP=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $2}')
+MYIP=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | awk '{print $2}')
 clear
 RED='\e[1;31m'
 GREEN='\e[0;32m'
@@ -27,8 +27,8 @@ yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 
-cek=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $2}' | grep $MYIP)
-Name=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | grep $MYIP | awk '{print $4}')
+cek=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | awk '{print $2}' | grep $MYIP)
+Name=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | grep $MYIP | awk '{print $4}')
 if [[ $cek = $MYIP ]]; then
 	echo -e "${green}Permission Accepted...${NC}"
 else
@@ -37,13 +37,13 @@ else
 	echo -e "Your IP is ${red}NOT REGISTER${NC} @ ${red}EXPIRED${NC}"
 	echo ""
 	echo -e "Please Contact ${green}Admin${NC}"
-	echo -e "Telegram : t.me/KhaiVpn767"
+	echo -e "Telegram : t.me/praisedev"
 	exit 0
 	clear
 fi
 
 BURIQ() {
-	curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access >/root/tmp
+	curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access >/root/tmp
 	data=($(cat /root/tmp | grep -E "^### " | awk '{print $4}'))
 	for user in "${data[@]}"; do
 		exp=($(grep -E "^### $user" "/root/tmp" | awk '{print $3}'))
@@ -59,8 +59,8 @@ BURIQ() {
 	rm -f /root/tmp
 }
 
-MYIP=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $2}')
-Name=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | grep $MYIP | awk '{print $4}')
+MYIP=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | grep $MYIP | awk '{print $4}')
 echo $Name >/usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 Bloman() {
@@ -75,8 +75,8 @@ Bloman() {
 }
 
 PERMISSION() {
-	MYIP=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $2}')
-	IZIN=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $3}' | grep $MYIP)
+	MYIP=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | awk '{print $2}')
+	IZIN=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | awk '{print $3}' | grep $MYIP)
 	if [[ "$MYIP" = "$IZIN" ]]; then
 		Bloman
 	else
@@ -97,7 +97,7 @@ if [ "$res" = "Expired" ]; then
 	Exp="\e[36mExpired\033[0m"
 	rm -f /home/needupdate >/dev/null 2>&1
 else
-	Exp=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | grep $MYIP | awk '{print $3}')
+	Exp=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | grep $MYIP | awk '{print $3}')
 fi
 
 clear
@@ -128,17 +128,17 @@ cpu_usage+=" %"
 # // script version
 myver="$(cat /home/ver)"
 # // script version check
-serverV=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/ScriptVersion/main/ssh_websocket_lite)
+serverV=$(curl -sS https://raw.githubusercontent.com/praisedev/ScriptVersion/main/ssh_websocket_lite)
 # // update script if available
 function updatews() {
 	clear
 	echo -e "[ ${GREEN}INFO${NC} ] Check for Script updates . . ."
 	sleep 1
-	wget -q -O /root/update-ssh.sh "https://raw.githubusercontent.com/KhaiVpn767/ScriptVersion/main/update-ssh.sh" && chmod +x update-ssh.sh && ./update-ssh.sh
+	wget -q -O /root/update-ssh.sh "https://raw.githubusercontent.com/praisedev/ScriptVersion/main/update-ssh.sh" && chmod +x update-ssh.sh && ./update-ssh.sh
 	sleep 1
 	rm -f /root/update-ssh.sh
 	rm -f /home/ver
-	version_check=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/ScriptVersion/main/ssh_websocket_lite)
+	version_check=$(curl -sS https://raw.githubusercontent.com/praisedev/ScriptVersion/main/ssh_websocket_lite)
 	echo "$version_check" >>/home/ver
 	clear
 	echo ""
@@ -353,7 +353,7 @@ case $opt in
 	;;
  77)
 	clear
-	wget https://raw.githubusercontent.com/KhaiVpn767/SlowDnsV1/main/dns2.sh && chmod +x dns2.sh && ./dns2.sh
+	wget https://raw.githubusercontent.com/praisedev/SlowDnsV1/main/dns2.sh && chmod +x dns2.sh && ./dns2.sh
 	;;
 20)
 	clear

@@ -1,6 +1,6 @@
 [Unit]
-Description=SSH Over Websocket Python KhaiVpn767
-Documentation=https://KhaiVpn767-Project.net
+Description=SSH Over Websocket Python praise
+Documentation=https://praise.asia
 After=network.target nss-lookup.target
 
 [Service]

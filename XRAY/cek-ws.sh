@@ -1,5 +1,5 @@
 #!/bin/bash
-#Autoscript-Lite By KhaiVpn767
+#Autoscript-Lite By praisedev
 clear
 red='\e[1;31m'
 green='\e[0;32m'

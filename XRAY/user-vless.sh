@@ -1,5 +1,5 @@
 #!/bin/bash
-#Autoscript-Lite By KhaiVpn767
+#Autoscript-Lite By praisedev
 clear
 MYIP=$(wget -qO- ipv4.icanhazip.com)
 NUMBER_OF_CLIENTS=$(grep -c -E "^### " "/usr/local/etc/xray/vless.json")
@@ -98,5 +98,5 @@ echo -e "Created On        : $hariini"
 echo -e "Expired On        : $exp"
 echo -e ""
 echo -e ""
-echo -e "Autoscript By KhaiVpn767"
+echo -e "Autoscript By praisedev"
 echo -e ""

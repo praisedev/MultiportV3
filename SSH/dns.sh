@@ -1,5 +1,5 @@
 #!/bin/bash
-#DNS Changer By KhaiVpn767
+#DNS Changer By praisedev
 #-------------------------
 P='\e[0;35m'
 B='\033[0;36m'
@@ -10,8 +10,8 @@ clear
 echo -e "\e[33m╒════════════════════════════════════════════╕\033[0m"
 echo -e " \E[1;47;39m                 DNS CHANGER                \E[0m"
 echo -e "\e[33m╘════════════════════════════════════════════╛\033[0m"
-\033[1;37mDNS Changer By KhaiVpn767\033[0m
-\033[1;37mTelegram : https://t.me/KhaiVpn767 / @KhaiVpn767\033[0m"
+\033[1;37mDNS Changer By praisedev\033[0m
+\033[1;37mTelegram : https://t.me/praisedev / @praisedev\033[0m"
 dnsfile="/root/dns"
 if test -f "$dnsfile"; then
 	udns=$(cat /root/dns)

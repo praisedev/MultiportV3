@@ -11,11 +11,11 @@ portsshws=$(cat ~/log-install.txt | grep -w "SSH Websocket" | cut -d: -f2 | awk 
 if [ -f "/etc/systemd/system/sshws.service" ]; then
 	clear
 else
-	wget -q -O /usr/bin/proxy3.js "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/proxy3.js"
+	wget -q -O /usr/bin/proxy3.js "https://raw.githubusercontent.com/praisedev/MultiportV3/main/SSH/proxy3.js"
 	cat <<EOF >/etc/systemd/system/sshws.service
 [Unit]
-Description=Websocket Enabler By KhaiVpn767
-Documentation=https://KhaiVpn767-Project.net
+Description=Websocket Enabler By praisedev
+Documentation=https://praisedev-Project.net
 [Service]
 Type=simple
 ExecStart=/usr/bin/ssh-wsenabler
@@ -36,7 +36,7 @@ function start() {
 	if [[ ! -z "${PID}" ]]; then
 		echo "Already ON !"
 	else
-		wget -q -O /usr/bin/ssh-wsenabler "https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSH/sshws-true.sh" && chmod +x /usr/bin/ssh-wsenabler && /usr/bin/ssh-wsenabler
+		wget -q -O /usr/bin/ssh-wsenabler "https://raw.githubusercontent.com/praisedev/MultiportV3/main/SSH/sshws-true.sh" && chmod +x /usr/bin/ssh-wsenabler && /usr/bin/ssh-wsenabler
 		systemctl daemon-reload >/dev/null 2>&1
 		systemctl enable sshws.service >/dev/null 2>&1
 		systemctl start sshws.service >/dev/null 2>&1

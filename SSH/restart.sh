@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Autoscript-Lite By KhaiVpn767
+#Autoscript-Lite By praisedev
 clear
 /etc/init.d/fail2ban restart
 /etc/init.d/cron restart

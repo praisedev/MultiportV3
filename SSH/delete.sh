@@ -10,7 +10,7 @@ echo ""
 echo -e "\033[0;34m
 \033[0m"
 echo -e ""
-echo -e "Autoscript By KhaiVpn767"
+echo -e "Autoscript By praisedev"
 echo -e ""
 cat /etc/shadow | cut -d: -f1,8 | sed /:$/d >/tmp/expirelist.txt
 totalaccounts=$(cat /tmp/expirelist.txt | wc -l)

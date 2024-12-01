@@ -1,5 +1,5 @@
 #!/bin/bash
-#Autoscript-Lite By KhaiVpn767
+#Autoscript-Lite By praisedev
 red='\e[1;31m'
 green='\e[0;32m'
 purple='\e[0;35m'
@@ -9,7 +9,7 @@ clear
 IP=$(wget -qO- icanhazip.com)
 date=$(date +"%Y-%m-%d")
 clear
-echo " VPS Data Backup By KhaiVpn767 "
+echo " VPS Data Backup By praisedev "
 sleep 1
 echo ""
 echo -e "[ ${green}INFO${NC} ] Please Insert Password To Secure Backup Data ."
@@ -49,8 +49,8 @@ id=($(echo $url | grep '^https' | cut -d'=' -f2))
 link="https://drive.google.com/u/4/uc?id=${id}&export=download"
 
 clear
-echo -e "\033[1;37mVPS Data Backup By KhaiVpn767\033[0m
-\033[1;37mTelegram : https://t.me/KhaiVpn767 / @KhaiVpn767\033[0m"
+echo -e "\033[1;37mVPS Data Backup By praisedev\033[0m
+\033[1;37mTelegram : https://t.me/praisedev / @praisedev\033[0m"
 echo ""
 echo "Please Copy Link Below & Save In Notepad"
 echo ""

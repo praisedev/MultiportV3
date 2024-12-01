@@ -89,7 +89,7 @@ fi
 echo -e "\033[0;34m
 \033[0m"
 echo -e ""
-echo -e "Autoscript By KhaiVpn767"
+echo -e "Autoscript By praisedev"
 echo -e ""
 
 rm -f /tmp/login-db-pid.txt
