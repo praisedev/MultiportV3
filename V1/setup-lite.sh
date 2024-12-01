@@ -2,7 +2,7 @@
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=$(date +"%Y-%m-%d" -d "$dateFromServer")
 #########################
-MYIP=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $2}')
+MYIP=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | awk '{print $2}')
 clear
 red='\e[1;31m'
 green='\e[0;32m'
@@ -17,24 +17,9 @@ yellow() { echo -e "\\033[33;1m${*}\\033[0m"; }
 green() { echo -e "\\033[32;1m${*}\\033[0m"; }
 red() { echo -e "\\033[31;1m${*}\\033[0m"; }
 
-cek=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $2}' | grep $MYIP)
-Name=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | grep $MYIP | awk '{print $4}')
-
-if [[ $cek = $MYIP ]]; then
-	echo -e "${green}Permission Accepted...${NC}"
-else
-	echo -e "${red}Permission Denied!${NC}"
-	echo ""
-	echo -e "Your IP is ${red}NOT REGISTER${NC} @ ${red}EXPIRED${NC}"
-	echo ""
-	echo -e "Please Contact ${green}Admin${NC}"
-	echo -e "Telegram : t.me/KhaiVpn767"
-	exit 0
-fi
-
 clear
 BURIQ() {
-	curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access >/root/tmp
+	curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access >/root/tmp
 	data=($(cat /root/tmp | grep -E "^### " | awk '{print $4}'))
 	for user in "${data[@]}"; do
 		exp=($(grep -E "^### $user" "/root/tmp" | awk '{print $3}'))
@@ -50,8 +35,8 @@ BURIQ() {
 	rm -f /root/tmp
 }
 
-MYIP=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $2}')
-Name=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | grep $MYIP | awk '{print $4}')
+MYIP=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | grep $MYIP | awk '{print $4}')
 echo $Name >/usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -67,8 +52,8 @@ Bloman() {
 }
 
 PERMISSION() {
-	MYIP=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $2}')
-	IZIN=$(curl -sS https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/LICENSE/access | awk '{print $2}' | grep $MYIP)
+	MYIP=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | awk '{print $2}')
+	IZIN=$(curl -sS https://raw.githubusercontent.com/praisedev/MultiportV3/main/LICENSE/access | awk '{print $2}' | grep $MYIP)
 	if [[ "$MYIP" = "$IZIN" ]]; then
 		Bloman
 	else
@@ -92,7 +77,7 @@ if [ "$(systemd-detect-virt)" == "openvz" ]; then
 	exit 1
 fi
 MYIP=$(wget -qO- icanhazip.com/ip)
-echo -e "[ ${yell}INFO${NC} ] Autoscript SSH XRAY Websocket Multiport By KhaiVpn767"
+echo -e "[ ${yell}INFO${NC} ] Autoscript SSH XRAY Websocket Multiport By praisedev"
 echo ""
 echo -e "[ ${yell}NOTES${NC} ] Before we continue ... "
 sleep 1
@@ -164,7 +149,7 @@ fi
 mkdir /var/lib/premium-script
 mkdir /var/lib/crot-script
 clear
-echo -e " This Autoscript Is Free [ ${green}Established By KhaiVpn767 2022${NC} ] "
+echo -e " This Autoscript Is Free [ ${green}Established By praisedev 2022${NC} ] "
 echo -e ""
 echo -e " ${green}Please Insert Your Name${NC}"
 echo -e ""
@@ -172,7 +157,7 @@ read -p " Client Name : " user
 echo -e ""
 echo "$user" >>/root/user
 clear
-echo -e " This Autoscript Is Free [ ${green}Established By KhaiVpn767 2022${NC} ] "
+echo -e " This Autoscript Is Free [ ${green}Established By praisedev 2022${NC} ] "
 echo -e ""
 echo -e " ${green}Please Insert Domain${NC}"
 echo -e ""
@@ -188,7 +173,7 @@ sleep 1
 #Install Dependencies
 echo -e "\e[0;32mINSTALLING TOOLS...\e[0m"
 sleep 1
-wget -q https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SETUP/tools.sh && chmod +x tools.sh && ./tools.sh
+wget -q https://raw.githubusercontent.com/praisedev/MultiportV3/main/SETUP/tools.sh && chmod +x tools.sh && ./tools.sh
 rm tools.sh
 echo -e "\e[0;32mDONE INSTALLING TOOLS\e[0m"
 echo -e ""
@@ -198,15 +183,15 @@ sleep 1
 #Install SSH-VPN
 echo -e "\e[0;32mINSTALLING SSH-VPN...\e[0m"
 sleep 1
-wget https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SETUP/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
+wget https://raw.githubusercontent.com/praisedev/MultiportV3/main/SETUP/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
 echo -e "\e[0;32mDONE INSTALLING SSH-VPN\e[0m"
 echo -e ""
 sleep 1
 #Install Xray
 echo -e "\e[0;32mINSTALLING XRAY CORE...\e[0m"
 sleep 1
-wget https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SETUP/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
-wget https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SSHWS/ins-sshws.sh && chmod +x ins-sshws.sh && ./ins-sshws.sh
+wget https://raw.githubusercontent.com/praisedev/MultiportV3/main/SETUP/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
+wget https://raw.githubusercontent.com/praisedev/MultiportV3/main/SSHWS/ins-sshws.sh && chmod +x ins-sshws.sh && ./ins-sshws.sh
 echo -e "\e[0;32mDONE INSTALLING XRAY CORE\e[0m"
 echo -e ""
 sleep 1
@@ -214,13 +199,13 @@ clear
 #Install SET-BR
 echo -e "\e[0;32mINSTALLING SET-BR...\e[0m"
 sleep 1
-wget https://raw.githubusercontent.com/KhaiVpn767/MultiportV3/main/SETUP/set-br.sh && chmod +x set-br.sh && ./set-br.sh
+wget https://raw.githubusercontent.com/praisedev/MultiportV3/main/SETUP/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 echo -e "\e[0;32mDONE INSTALLING SET-BR...\e[0m"
 echo -e ""
 sleep 1
 clear
 #Install slow-dns
-wget https://raw.githubusercontent.com/KhaiVpn767/SlowDnsV1/main/dns2.sh && chmod +x dns2.sh && ./dns2.sh
+wget https://raw.githubusercontent.com/praisedev/SlowDnsV1/main/dns2.sh && chmod +x dns2.sh && ./dns2.sh
 echo -e ""
 sleep 1
 clear
@@ -292,12 +277,12 @@ echo "   - Installation Log --> /root/log-install.txt" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
 echo "   [ DEV INFORMATION ]" | tee -a log-install.txt
 echo -e "${purple}   -------------------${NC}" | tee -a log-install.txt
-echo "   - Autoscript-Lite By      : KhaiVpn767" | tee -a log-install.txt
-echo "   - Telegram                : t.me/KhaiVpn767" | tee -a log-install.txt
-echo "   - Github                  : github.com/KhaiVpn767" | tee -a log-install.txt
+echo "   - Autoscript-Lite By      : praisedev" | tee -a log-install.txt
+echo "   - Telegram                : t.me/praisedev" | tee -a log-install.txt
+echo "   - Github                  : github.com/praisedev" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
 echo -e "${purple}
-${NC}Autoscript-Lite By KhaiVpn767${purple}
+${NC}Autoscript-Lite By praisedev${purple}
 ${NC}" | tee -a log-install.txt
 echo "" | tee -a log-install.txt
 secs_to_human "$(($(date +%s) - ${start}))" | tee -a log-install.txt
